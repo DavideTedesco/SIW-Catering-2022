@@ -9,17 +9,32 @@
 </head>
 
 <body>
+	<div class="flex-container">
+	<div id="logo"><img src="/images/cloche.png"></div>
 	    <h1 id="a">Catering Service</h1>
-		<div id="logo"><img src="/images/cloche.png"></div>
-		<div>
-			<a th:href = "@{/login}">Login</a>
-   		</div>
-		<div>
-		<a th:href = "@{/register}">Register</a>
-		</div>
-		<h2>Our services</h2>
-		<h2>About us</h2>
-		<h2>Contacts</h2>
-		<footer></footer>
+	</div>
+	<div id="banner"><img src="/images/table_food.jpeg"></div>
+	<div>
+		<a th:href="@{/login}">Login</a>
+		  
+	</div>
+	<div>
+		<a th:href="@{/register}">Register</a>
+	</div>
+	<h2>Our services</h2>
+	<h2>About us</h2>
+	<div class="flex-container">
+		<p>
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+			Etiam consectetur tellus odio, vel tempor nibh maximus a.
+			Maecenas vitae tincidunt risus. Nulla ac turpis odio.
+			Mauris luctus, enim id tempor mattis, neque justo tincidunt dolor, vel tempus quam dolor id felis.
+			Maecenas hendrerit rhoncus lorem, non viverra nisl pretium sit amet.
+			Quisque a enim nec arcu dignissim placerat. Integer magna dui, elementum id ex in, rutrum mattis sapien.
+		</p>
+	</div>
+	<h2>Contacts</h2>
+	<footer></footer>
 </body>
+
 </html>

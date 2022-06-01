@@ -5,8 +5,24 @@ body {
   /*background-image: url("/images/6-rough-seamless-recycled-vintage-paper-texture-1.jpg");
 	*/
 }
-
 #logo{
-	position: top left;
-	width: 10 px;
+	width: 5%;
+	height: auto;
+
+}
+
+#banner{
+	display: flex;
+	width: 30%;
+}
+
+#aboutus{
+	align-content: space-around;
+}
+
+
+.flex-container {
+  display: flex;
+  flex-grow: 1;
+  align-items: center;
 }
