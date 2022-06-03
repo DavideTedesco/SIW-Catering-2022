@@ -2,28 +2,32 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head>
-	<meta charset="UTF-8" />
-	<link href="/css/my-style.css" rel="stylesheet">
+	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="/css/index.css" rel="stylesheet">
 	<link rel="icon" href="/images/cloche.ico" type="image/x-icon">
 	<title>Catering</title>
 </head>
 
 <body>
 	<div class="flex-container">
+	<div id="banner"><img src="/images/table_food.jpeg" width="100%"></div>
+
+	<h1 id="a">Catering Service</h1>
+	<!--<div class="flex-container">
 	<div id="logo"><img src="/images/cloche.png"></div>
-	    <h1 id="a">Catering Service</h1>
-	</div>
-	<div id="banner"><img src="/images/table_food.jpeg"></div>
-	<div>
-		<a th:href="@{/login}">Login</a>
-		  
-	</div>
-	<div>
-		<a th:href="@{/register}">Register</a>
-	</div>
+	</div>-->
+	<ul class="list">
+        <li>
+			<a  class="link" th:href="@{/login}">Accedi</a>
+        </li>
+        <li>
+			<a class="link" th:href="@{/register}">Registrati</a>
+        </li>     
+    </ul>
 	<h2>Our services</h2>
 	<h2>About us</h2>
-	<div class="flex-container">
 		<p>
 			Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 			Etiam consectetur tellus odio, vel tempor nibh maximus a.
@@ -32,8 +36,23 @@
 			Maecenas hendrerit rhoncus lorem, non viverra nisl pretium sit amet.
 			Quisque a enim nec arcu dignissim placerat. Integer magna dui, elementum id ex in, rutrum mattis sapien.
 		</p>
-	</div>
 	<h2>Contacts</h2>
+		<ul class="list">
+			<li>
+				<a class="link" href="mailto:info@veryimportantcatering.com">info@veryimportantcatering.com</a>
+			</li>
+			<li>
+				<div>0039 0884 519618</div>
+			</li>
+			<li>
+				<div>Via degli strozzapreti, 42, Manfredonia, Italia, 71043</div>
+			</li>
+			<li>
+				<div>Partita IVA 87215130962 </div>
+			</li>
+		</ul>
+	</div>
+
 	<footer></footer>
 </body>
 
