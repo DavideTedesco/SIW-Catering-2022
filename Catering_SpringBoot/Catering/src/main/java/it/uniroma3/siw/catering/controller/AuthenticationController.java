@@ -10,11 +10,11 @@ public class AuthenticationController {
 
 	@RequestMapping(value = "/login", method = RequestMethod.GET) 
 	public String showLoginForm (Model model) {
-		return "login.html";
+		return "login";
 	}
 	
 	@RequestMapping(value = "/register", method = RequestMethod.GET) 
 	public String showRegisterForm (Model model) {
-		return "register.html";
+		return "register";
 	}
 }

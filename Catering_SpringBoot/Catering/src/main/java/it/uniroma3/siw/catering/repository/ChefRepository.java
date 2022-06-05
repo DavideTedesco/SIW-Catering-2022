@@ -2,8 +2,8 @@ package it.uniroma3.siw.catering.repository;
 
 import org.springframework.data.repository.CrudRepository;
 
-import it.uniroma3.siw.catering.model.Buffet;
+import it.uniroma3.siw.catering.model.Chef;
 
-public interface ChefRepository extends CrudRepository<Buffet, Long> {
+public interface ChefRepository extends CrudRepository<Chef, Long> {
 
 }
