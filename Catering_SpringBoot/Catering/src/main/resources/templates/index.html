@@ -3,8 +3,8 @@
 
 <head>
 	<meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="/css/index.css" rel="stylesheet">
 	<link rel="icon" href="/images/cloche.ico" type="image/x-icon">
 	<title>Catering</title>
@@ -12,46 +12,49 @@
 
 <body>
 	<div class="flex-container">
-	<div id="banner"><img src="/images/table_food.jpeg" width="100%"></div>
+		<div id="banner"><img src="/images/table_food.jpeg" width="100%"></div>
 
-	<h1 id="a">Catering Service</h1>
-	<!--<div class="flex-container">
+		<h1 id="a">Catering Service</h1>
+		<!--<div class="flex-container">
 	<div id="logo"><img src="/images/cloche.png"></div>
 	</div>-->
-	<ul class="list">
-        <li>
-			<a  class="link" th:href="@{/login}">Accedi</a>
-        </li>
-        <li>
-			<a class="link" th:href="@{/register}">Registrati</a>
-        </li>     
-    </ul>
-	<h2>Our services</h2>
+		<ul class="list">
+			<li>
+				<a class="link" th:href="@{/login}">Accedi</a>
+			</li>
+			<li>
+				<a class="link" th:href="@{/register}">Registrati</a>
+			</li>
+			<li>
+				<a class="link" th:href="@{/admin}">Admin page</a>
+			</li>
+		</ul>
+		<h2>Our services</h2>
 		<ul>
-	        <li>
+			<li>
 				<div>Preparazioni su misura per matrimoni e battesimi</div>
-	        </li>
-	        <li>
+			</li>
+			<li>
 				<div>Torte e dessert per ogni tipo di occasione</div>
-	        </li>  
-	        <li>
+			</li>
+			<li>
 				<div>Pranzi e cene di lavoro</div>
-	        </li>      
-	    </ul>
-	<div id="about-us">
-		<h2 >About us</h2>
-			<div id="aroundas1"></div>
-			<div id="aroundas2">
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-				Etiam consectetur tellus odio, vel tempor nibh maximus a.
-				Maecenas vitae tincidunt risus. Nulla ac turpis odio.
-				Mauris luctus, enim id tempor mattis, neque justo tincidunt dolor, vel tempus quam dolor id felis.
-				Maecenas hendrerit rhoncus lorem, non viverra nisl pretium sit amet.
-				Quisque a enim nec arcu dignissim placerat. Integer magna dui, elementum id ex in, rutrum mattis sapien.
+			</li>
+		</ul>
+		<div class="about-us">
+			<h2>About us</h2>
+
+			<div id="aroundau">
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque eu dictum ex. Quisque laoreet magna
+					sit amet sagittis consequat. Nullam et dui sed leo porta sodales in non nulla. Sed velit est, varius
+					in auctor eu, tristique vitae purus. Vestibulum vitae leo varius, dictum libero id, ultrices libero.
+					Cras bibendum dolor et orci semper, vitae accumsan lectus accumsan. Nullam ullamcorper, purus et
+					facilisis rhoncus, dui enim vestibulum eros, vel condimentum felis nisi tempor mauris.
+				</p>
 			</div>
-			<div id="aroundas2"></div>
-	</div>
-	<h2>Contacts</h2>
+		</div>
+		<h2>Contacts</h2>
 		<ul class="list">
 			<li>
 				<a class="link" href="mailto:info@veryimportantcatering.com">info@veryimportantcatering.com</a>
@@ -68,7 +71,7 @@
 		</ul>
 	</div>
 	<footer>
-	<aclass="link" th:href="@{/index}">Home</a>
+		<aclass="link" th:href="@{/index}">Home</a>
 	</footer>
 </body>
 
