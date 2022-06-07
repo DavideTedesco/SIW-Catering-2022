@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@100&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+  font-family: 'Heebo', sans-serif;
+  height: 100vh;
+  background-color: #6f2d3a;
+  display: grid;
+  place-content: center;
+  color: white;
+  /*background-image: url("/images/6-rough-seamless-recycled-vintage-paper-texture-1.jpg");
+	*/
+}

@@ -1,9 +1,11 @@
 package it.uniroma3.siw.catering.validator;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
 
 import it.uniroma3.siw.catering.model.Ingrediente;
+import it.uniroma3.siw.catering.service.IngredienteService;
 
 public class IngredienteValidator implements Validator {
 
@@ -12,11 +14,14 @@ public class IngredienteValidator implements Validator {
 		return Ingrediente.class.equals(clazz);
 	}
 
+	@Autowired
+	private IngredienteService ingredientService;
+
+
 
 	@Override
 	public void validate(Object target, Errors errors) {
-		// TODO Auto-generated method stub
-
+		if(this.ingredientService.alreadyExists(((Ingrediente) target)))
+			errors.reject("piatto.duplicato")	;
 	}
-
 }
