@@ -11,4 +11,9 @@ public class MainController {
 	public String index(Model model) {
 		return "index";
 	}
+	
+	@RequestMapping(value = {"/", "explore"}, method = RequestMethod.GET)
+	public String explore(Model model) {
+		return "explore";
+	}
 }

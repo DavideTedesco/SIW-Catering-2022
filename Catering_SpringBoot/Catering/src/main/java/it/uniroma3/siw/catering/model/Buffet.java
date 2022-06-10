@@ -22,6 +22,9 @@ public class Buffet {
 	@NotBlank
 	private String descrizione;
 	
+	@NotBlank
+	private String categoria;
+	
 	@OneToMany
 	@JoinColumn(name = "piatto_id")
 	private List<Piatto> piatti;
@@ -57,5 +60,14 @@ public class Buffet {
 	public void setPiatti(List<Piatto> piatti) {
 		this.piatti = piatti;
 	}
+
+	public String getCategoria() {
+		return categoria;
+	}
+
+	public void setCategoria(String categoria) {
+		this.categoria = categoria;
+	}
+	
 	
 }

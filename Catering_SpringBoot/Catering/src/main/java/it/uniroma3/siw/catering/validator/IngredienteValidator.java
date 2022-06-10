@@ -15,13 +15,13 @@ public class IngredienteValidator implements Validator {
 	}
 
 	@Autowired
-	private IngredienteService ingredientService;
+	private IngredienteService ingredienteService;
 
 
 
 	@Override
 	public void validate(Object target, Errors errors) {
-		if(this.ingredientService.alreadyExists(((Ingrediente) target)))
+		if(this.ingredienteService.alreadyExists(((Ingrediente) target)))
 			errors.reject("piatto.duplicato")	;
 	}
 }
