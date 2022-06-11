@@ -10,6 +10,9 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.validation.constraints.NotBlank;
 
+import org.hibernate.annotations.Cascade;
+import org.hibernate.annotations.CascadeType;
+
 @Entity
 public class Chef {
 	@Id
@@ -28,6 +31,7 @@ public class Chef {
 	@NotBlank
 	@OneToMany
 	@JoinColumn(name = "buffet_id")
+	@Cascade({CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DELETE})
 	private List<Buffet> buffets;
 
 	public Long getId() {

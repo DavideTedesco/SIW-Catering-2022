@@ -3,12 +3,16 @@ package it.uniroma3.siw.catering.model;
 import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.validation.constraints.NotBlank;
+
+import org.hibernate.annotations.Cascade;
+import org.hibernate.annotations.CascadeType;
 
 @Entity
 public class Buffet {
@@ -25,8 +29,10 @@ public class Buffet {
 	@NotBlank
 	private String categoria;
 	
-	@OneToMany
+	@OneToMany(fetch = FetchType.EAGER)
 	@JoinColumn(name = "piatto_id")
+	@Cascade({CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DELETE})
+	
 	private List<Piatto> piatti;
 
 	public Long getId() {
