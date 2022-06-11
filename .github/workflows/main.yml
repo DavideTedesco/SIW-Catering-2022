@@ -7,6 +7,9 @@ on:
 jobs:
   custom-deploy:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory:  ./Catering_SpringBoot/Catering
     steps:
       - name: Check out repository
         uses: actions/checkout@v2
