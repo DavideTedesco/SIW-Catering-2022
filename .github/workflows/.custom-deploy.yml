@@ -31,5 +31,5 @@ jobs:
         working-directory: ./Catering_SpringBoot/Catering
 
       - name: Push to Heroku
-        run: git push heroku main
+        run: git push heroku testbranch:main
         working-directory: ./Catering_SpringBoot/Catering
