@@ -6,8 +6,8 @@ on: [push]
 jobs:
   heroku-deploy:
     runs-on: ubuntu-latest
-      defaults:
-        run:
+    defaults:
+      run:
           working-directory: ./Catering_SpringBoot/Catering
     steps:
       - name: Check out repository
