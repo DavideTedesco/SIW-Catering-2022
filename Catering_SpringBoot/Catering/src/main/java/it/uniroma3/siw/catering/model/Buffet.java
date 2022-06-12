@@ -30,7 +30,7 @@ public class Buffet {
 	private String categoria;
 	
 	@OneToMany(fetch = FetchType.EAGER)
-	@JoinColumn(name = "piatto_id")
+	//@JoinColumn(name = "piatto_id")
 	@Cascade({CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DELETE})
 	
 	private List<Piatto> piatti;

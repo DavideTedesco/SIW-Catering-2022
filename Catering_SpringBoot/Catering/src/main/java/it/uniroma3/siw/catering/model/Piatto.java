@@ -27,7 +27,7 @@ public class Piatto {
 	private String descrizione;
 	
 	@OneToMany(fetch = FetchType.EAGER)
-	@JoinColumn(name = "ingrediente_id")
+	//@JoinColumn(name = "ingrediente_id")
 	@Cascade({CascadeType.PERSIST})
 	private List<Ingrediente> ingredienti;
 

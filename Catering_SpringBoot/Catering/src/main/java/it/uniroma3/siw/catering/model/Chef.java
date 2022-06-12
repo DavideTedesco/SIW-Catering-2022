@@ -30,7 +30,7 @@ public class Chef {
 	
 	@NotBlank
 	@OneToMany
-	@JoinColumn(name = "buffet_id")
+	//@JoinColumn(name = "buffet_id")
 	@Cascade({CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DELETE})
 	private List<Buffet> buffets;
 

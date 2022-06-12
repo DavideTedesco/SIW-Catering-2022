@@ -34,6 +34,10 @@ body {
   align-items: center;
 }
 
+#campi{
+  display: flex;
+}
+
 #about-us{
   display: flex;
 }
@@ -79,3 +83,5 @@ body {
 .link:hover::after{
     transform: scaleX(1); /*When the link is hovered, we target the pseudo-element and turn the scaleX back to 1. This will make it grow back to the initial width of 100%. */
 }
+
+

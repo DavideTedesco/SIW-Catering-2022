@@ -16,23 +16,22 @@
 	</div>
 	<form th:action="@{/login}" method="POST">
 		<div>
-
-			<input type="text" id="username" required class="input">
-			<label for="username" class="input-label">Username</label>
-
-
+			<div>
+				<span>Username:</span>
+				<span><input type="text" id="username" required/></span>
+			</div>
 			<div>
 				<span>Password:</span>
-				<span><input name="password" type="password" required /></span>
+				<span><input name="password" type="password" required/></span>
 			</div>
 			<div>
 				<span><button type="submit">Login</button></span>
 			</div>
 		</div>
 	</form>
-	<div>
-			<div><a class="link" th:href="@{/admin/login}" th:text="#{admin.areyou}">pippo</a></div>
-	</div>
+	<!--<div>
+		<div><a class="link" th:href="@{/admin/login}" th:text="#{admin.areyou}">pippo</a></div>
+	</div>-->
 	</div>
 
 </body>
