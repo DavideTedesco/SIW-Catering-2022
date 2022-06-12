@@ -12,3 +12,7 @@ Repository of the Exam project for the realisation of a Spring Boot Application 
 - Spring Boot
 - Maven
 - Heroku
+
+## The app deployed
+
+[See the app here!](https://siw-catering-2022.herokuapp.com/)
