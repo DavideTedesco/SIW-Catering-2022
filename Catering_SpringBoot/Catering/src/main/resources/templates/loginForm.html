@@ -13,30 +13,28 @@
 
 	<div class="flex-container">
 		<h4>Login</h4>
-	</div>
-	<form th:action="@{/login}" method="POST">
-		<div>
+		<form th:action="@{/login}" method="POST">
 			<div>
-				<span>Username:</span>
-				<span><input type="text" id="username" required/></span>
+				<div>
+					<span>Username:</span>
+					<span><input name="username" type="text" required /></span>
+				</div>
+				<div>
+					<span>Password:</span>
+					<span><input name="password" type="password" required /></span>
+				</div>
+				<div>
+					<span><button type="submit">Login</button></span>
+				</div>
 			</div>
-			<div>
-				<span>Password:</span>
-				<span><input name="password" type="password" required/></span>
-			</div>
-			<div>
-				<span><button type="submit">Login</button></span>
-			</div>
-		</div>
-	</form>
-	<!--<div>
+		</form>
+		<!--<div>
 		<div><a class="link" th:href="@{/admin/login}" th:text="#{admin.areyou}">pippo</a></div>
 	</div>-->
 	</div>
-
+	<footer>
+		<div><a class="link" th:href="@{/index}" th:text="#{error.backhome}">Torna alla</a></div>
+	</footer>
 </body>
-<footer>
-	<div><a class="link" th:href="@{/index}" th:text="#{error.backhome}">Torna alla</a></div>
-</footer>
 
 </html>

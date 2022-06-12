@@ -8,10 +8,13 @@ import org.springframework.validation.Validator;
 import it.uniroma3.siw.catering.model.Credentials;
 import it.uniroma3.siw.catering.model.User;
 import it.uniroma3.siw.catering.service.CredentialsService;
-
+/**
+ * Validator for Credentials
+ */
 @Component
-public class CredentialsValidator implements Validator{
-	@Autowired
+public class CredentialsValidator implements Validator {
+
+    @Autowired
     private CredentialsService credentialsService;
 
     final Integer MAX_USERNAME_LENGTH = 20;
@@ -42,4 +45,5 @@ public class CredentialsValidator implements Validator{
     public boolean supports(Class<?> clazz) {
         return User.class.equals(clazz);
     }
+
 }

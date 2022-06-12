@@ -1,6 +1,5 @@
 package it.uniroma3.siw.catering.model;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -8,27 +7,16 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "users")
+@Table(name = "users") // cambiamo nome perchè in postgres user e' una parola riservata
 public class User {
-
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	
-	@Column(nullable = false)
 	private String nome;
 	
-	@Column(nullable = false)
 	private String cognome;
-
-	
-	public User(String nome, String cognome) {
-		this.nome = nome;
-		this.cognome = cognome;
-	}
-
-	public User() {
-	}
 
 	public Long getId() {
 		return id;
@@ -53,4 +41,6 @@ public class User {
 	public void setCognome(String cognome) {
 		this.cognome = cognome;
 	}
+	
+	
 }

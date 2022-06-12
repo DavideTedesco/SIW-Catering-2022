@@ -1,30 +1,24 @@
 package it.uniroma3.siw.catering.authentication;
 
-import org.springframework.context.annotation.Configuration;
-import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
-import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
-import org.springframework.http.HttpMethod;
-import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.crypto.password.PasswordEncoder;
+import static it.uniroma3.siw.catering.model.Credentials.ADMIN_ROLE;
 
 import javax.sql.DataSource;
 
-import static it.uniroma3.siw.catering.model.Credentials.ADMIN_ROLE;
-//import static it.uniroma3.siw.spring.model.Credentials.DEFAULT_ROLE;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
+import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
-/**
- * The AuthConfiguration is a Spring Security Configuration.
- * It extends WebSecurityConfigurerAdapter, meaning that it provides the settings for Web security.
- */
 @Configuration
 @EnableWebSecurity
 public class AuthConfiguration extends WebSecurityConfigurerAdapter {
-
-    /**
+	 /**
      * The datasource is automatically injected into the AuthConfiguration (using its getters and setters)
      * and it is used to access the DB to get the Credentials to perform authentiation and authorization
      */
@@ -40,7 +34,7 @@ public class AuthConfiguration extends WebSecurityConfigurerAdapter {
                 // authorization paragraph: qui definiamo chi può accedere a cosa
                 .authorizeRequests()
                 // chiunque (autenticato o no) può accedere alle pagine index, login, register, ai css e alle immagini
-                .antMatchers(HttpMethod.GET, "/", "/index", "/login", "/register", "/css/**", "/images/**", "/error").permitAll()
+                .antMatchers(HttpMethod.GET, "/", "/index", "/login", "/register", "/css/**", "/images/**", "error").permitAll()
                 // chiunque (autenticato o no) può mandare richieste POST al punto di accesso per login e register 
                 .antMatchers(HttpMethod.POST, "/login", "/register").permitAll()
                 // solo gli utenti autenticati con ruolo ADMIN possono accedere a risorse con path /admin/**
@@ -57,6 +51,7 @@ public class AuthConfiguration extends WebSecurityConfigurerAdapter {
                 .loginPage("/login")
                 // se il login ha successo, si viene rediretti al path /default
                 .defaultSuccessUrl("/default")
+                //.failureUrl("/errorLogin")
 
                 // logout paragraph: qui definiamo il logout
                 .and().logout()
@@ -77,7 +72,7 @@ public class AuthConfiguration extends WebSecurityConfigurerAdapter {
                 //use the autowired datasource to access the saved credentials
                 .dataSource(this.datasource)
                 //retrieve username and role
-                .authoritiesByUsernameQuery("SELECT username, ruolo FROM credentials WHERE username=?")
+                .authoritiesByUsernameQuery("SELECT username, role FROM credentials WHERE username=?")
                 //retrieve username, password and a boolean flag specifying whether the user is enabled or not (always enabled in our case)
                 .usersByUsernameQuery("SELECT username, password, 1 as enabled FROM credentials WHERE username=?");
     }

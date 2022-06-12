@@ -6,12 +6,15 @@ import org.springframework.validation.Validator;
 
 import it.uniroma3.siw.catering.model.User;
 
+
+/**
+ * Validator for User
+ */
 @Component
 public class UserValidator implements Validator {
 
-
-    final Integer MAX_NAME_LENGTH = 50;
-    final Integer MIN_NAME_LENGTH = 1;
+    final Integer MAX_NAME_LENGTH = 100;
+    final Integer MIN_NAME_LENGTH = 2;
 
     @Override
     public void validate(Object o, Errors errors) {
@@ -31,7 +34,9 @@ public class UserValidator implements Validator {
     }
 
     @Override
-    public boolean supports(Class<?> classe) {
-        return User.class.equals(classe);
+    public boolean supports(Class<?> clazz) {
+        return User.class.equals(clazz);
     }
+
 }
+

@@ -2,37 +2,36 @@ package it.uniroma3.siw.catering.model;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.validation.constraints.NotBlank;
 
-import org.hibernate.annotations.Cascade;
-import org.hibernate.annotations.CascadeType;
 
 @Entity
 public class Buffet {
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	
 	@NotBlank
 	private String nome;
-	
+	@NotBlank
+	private String categoria;
 	@NotBlank
 	private String descrizione;
 	
-	@NotBlank
-	private String categoria;
+	@ManyToOne
+	private Chef chef;
 	
-	@OneToMany(fetch = FetchType.EAGER)
-	//@JoinColumn(name = "piatto_id")
-	@Cascade({CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DELETE})
-	
+	@OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REMOVE},
+	fetch = FetchType.EAGER)
 	private List<Piatto> piatti;
 
 	public Long getId() {
@@ -74,6 +73,7 @@ public class Buffet {
 	public void setCategoria(String categoria) {
 		this.categoria = categoria;
 	}
+	
 	
 	
 }

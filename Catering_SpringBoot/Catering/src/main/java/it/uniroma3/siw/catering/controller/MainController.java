@@ -6,41 +6,34 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class MainController {
-
-	// @RequestMapping(value = {"/", "index"}, method = RequestMethod.GET)
-	@GetMapping({ "/index" })
+	
+	@GetMapping({"/index"})
 	public String index(Model model) {
 		return "index";
 	}
-
-	// @RequestMapping(value = {"/", "explore"}, method = RequestMethod.GET)
-	@GetMapping({ "/explore" })
+	
+	@GetMapping({"/explore"})
 	public String explore(Model model) {
 		return "explore";
 	}
-
-	// @RequestMapping(value = {"/", "explore"}, method = RequestMethod.GET)
-	@GetMapping({ "/editBuffet" })
+	
+	@GetMapping({"/insertIngredient"})
+	public String inserdtIgredient(Model model) {
+		return "admin/insertIngredient";
+	}
+	
+	@GetMapping({"/editBuffet"})
 	public String editBuffet(Model model) {
 		return "admin/editBuffet";
 	}
-
-	// @RequestMapping(value = {"/", "explore"}, method = RequestMethod.GET)
-	@GetMapping({ "/insertIngredient" })
-	public String insertIngredient(Model model) {
-		return "admin/insertIngredient";
+	
+	@GetMapping({"/adminWelcomePage"})
+	public String adminWelcomePage(Model model) {
+		return "admin/adminWelcomePage";
 	}
-
-	// @RequestMapping(value = {"/", "explore"}, method = RequestMethod.GET)
-	@GetMapping({ "/welcomePageAdmin" })
-	public String welcomePageAdmin(Model model) {
-		return "admin/welcomePageAdmin";
+	
+	@GetMapping({"/welcomePage"})
+	public String welcomePage(Model model) {
+		return "welcomePage";
 	}
-
-	// @RequestMapping(value = {"/", "explore"}, method = RequestMethod.GET)
-	@GetMapping({ "/welcomePageUser" })
-	public String welcomePageUser(Model model) {
-		return "welcomePageUser";
-	}
-
 }

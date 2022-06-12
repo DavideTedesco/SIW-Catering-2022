@@ -2,36 +2,28 @@ package it.uniroma3.siw.catering.model;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
-import javax.validation.constraints.NotBlank;
-
-import org.hibernate.annotations.Cascade;
-import org.hibernate.annotations.CascadeType;
 
 @Entity
 public class Chef {
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	
-	@NotBlank
 	private String nome;
 	
-	@NotBlank
 	private String cognome;
 	
-	@NotBlank
-	private String nazionalita;
+	private String nazionalitá;
 	
-	@NotBlank
-	@OneToMany
-	//@JoinColumn(name = "buffet_id")
-	@Cascade({CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DELETE})
+	@OneToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE}, fetch = FetchType.EAGER)
 	private List<Buffet> buffets;
 
 	public Long getId() {
@@ -58,12 +50,12 @@ public class Chef {
 		this.cognome = cognome;
 	}
 
-	public String getNazionalita() {
-		return nazionalita;
+	public String getNazionalitá() {
+		return nazionalitá;
 	}
 
-	public void setNazionalita(String nazionalita) {
-		this.nazionalita = nazionalita;
+	public void setNazionalitá(String nazionalitá) {
+		this.nazionalitá = nazionalitá;
 	}
 
 	public List<Buffet> getBuffets() {
@@ -73,5 +65,6 @@ public class Chef {
 	public void setBuffets(List<Buffet> buffets) {
 		this.buffets = buffets;
 	}
+	
 	
 }

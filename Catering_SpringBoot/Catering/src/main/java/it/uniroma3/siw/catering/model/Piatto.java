@@ -2,34 +2,26 @@ package it.uniroma3.siw.catering.model;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
-import javax.validation.constraints.NotBlank;
-
-import org.hibernate.annotations.Cascade;
-import org.hibernate.annotations.CascadeType;
 
 @Entity
 public class Piatto {
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
-
-	@NotBlank
+	
 	private String nome;
-
-	@NotBlank
+	
 	private String descrizione;
 	
-	@OneToMany(fetch = FetchType.EAGER)
-	//@JoinColumn(name = "ingrediente_id")
-	@Cascade({CascadeType.PERSIST})
-	private List<Ingrediente> ingredienti;
+	@OneToMany(cascade = CascadeType.PERSIST)
+	List<Ingrediente> ingredienti;
 
 	public Long getId() {
 		return id;
@@ -62,5 +54,7 @@ public class Piatto {
 	public void setIngredienti(List<Ingrediente> ingredienti) {
 		this.ingredienti = ingredienti;
 	}
+	
+	
 	
 }
