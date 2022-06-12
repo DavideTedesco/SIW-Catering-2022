@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8" />
+	<link href="/css/index.css" rel="stylesheet">
+	<title>Dettagli dello chef</title>
+</head>
+
+<body>
+	    <div>
+		    <h4>Dettagli chef</h4>
+		<div>
+			<span th:text="${chef.nome}">Paolo</span>
+			<span th:text="${chef.cognome}">Rossi</span>
+			<span th:text="${chef.nazionalita}">neozelandese</span>
+			  
+		</div>
+		   
+	</div>
+	    <footer><a href="/index">Home</a></footer>
+</body>
+
+</html>

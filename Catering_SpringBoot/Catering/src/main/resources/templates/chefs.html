@@ -13,7 +13,10 @@
 </head>
 
 <body>
-	<div class="flex-container">
-		<a class="link" th:href="@{/buffet}">Apri il buffet</a>
+	<!--<div class="grid-container" th:each="chef : ${chefs}">
+		<div class="grid-item" th:text="${chef.nome} +' ' +${chef.cognome} + ' '+${chef.nazionalita}">mimmo</div>
+	</div>-->
+	<div class="grid-container" th:each="user : ${users}">
+		<div class="grid-item" th:text="${user.nome} +' ' +${user.cognome} + ' '+${user.id}">mimmo</div>
 	</div>
 </body>

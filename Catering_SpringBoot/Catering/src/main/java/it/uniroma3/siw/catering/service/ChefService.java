@@ -21,19 +21,14 @@ public class ChefService {
 	public Chef save(Chef chef) {
 		return chefRepo.save(chef);
 	}
-	
-	/*
-	 * How to find all chef's buffet???
-	 */
-	
-	//@Transactional
-	//public List<Buffet> getChetBuffet(Chef c){
-	//	return chefRepo.getAllChefBuffet(c);
-	//}
 		
 	@Transactional
-	public List<Buffet> getChetBuffet(Chef chef){
+	public List<Buffet> getChefBuffet(Chef chef){
 		return chefRepo.getAllChefBuffet(chef);
 	}
 
+	@Transactional
+	public List<Chef> getAllChefs(){
+		return (List<Chef>) chefRepo.findAll();
+	}
 }

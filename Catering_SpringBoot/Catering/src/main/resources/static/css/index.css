@@ -48,12 +48,31 @@ body {
 
 }
 
+#welcome-page{
+	margin-top: 10%;
+	margin-bottom: 10%;
+	text-align: center;
+
+}
+
+#avatar-image{
+	width: 50%;
+    image-rendering:smooth;
+}
 #title-au{
 	text-align: center;
 }
 #aroundau{
     margin-left: 20%;
     margin-right: 20%;
+}
+
+.grid-container {
+  display: grid;
+}
+
+.grid-item{
+	
 }
 
 .list{

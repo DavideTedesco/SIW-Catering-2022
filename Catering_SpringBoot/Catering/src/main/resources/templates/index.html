@@ -18,29 +18,7 @@
 		<!--<div class="flex-container">
 	<div id="logo"><img src="/images/cloche.png"></div>
 	</div>-->
-		<ul class="list">
-			<li>
-				<a class="link" th:href="@{/login}">Accedi</a>
-			</li>
-			<li>
-				<a class="link" th:href="@{/register}">Registrati</a>
-			</li>
-			<li>
-				<a class="link" th:href="@{/welcomePageAdmin}">Admin page</a>
-			</li>
-			<li>
-				<a class="link" th:href="@{/welcomePageUser}">User page</a>
-			</li>
-			<li>
-				<a class="link" th:href="@{/error}">Error</a>
-			</li>
-			<li>
-				<a class="link" th:href="@{/explore}">Explore</a>
-			</li>
-			<li>
-				<a class="link" th:href="@{/buffet}">Buffet</a>
-			</li>
-		</ul>
+
 		<h2>Our services</h2>
 		<ul>
 			<li>
@@ -54,19 +32,42 @@
 			</li>
 		</ul>
 		<div class="about-us">
-			
 
 			<div id="aroundau">
-			<div id="title-au"><h2>About us</h2></div>
-				<p>
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque eu dictum ex. Quisque laoreet magna
-					sit amet sagittis consequat. Nullam et dui sed leo porta sodales in non nulla. Sed velit est, varius
-					in auctor eu, tristique vitae purus. Vestibulum vitae leo varius, dictum libero id, ultrices libero.
-					Cras bibendum dolor et orci semper, vitae accumsan lectus accumsan. Nullam ullamcorper, purus et
-					facilisis rhoncus, dui enim vestibulum eros, vel condimentum felis nisi tempor mauris.
-				</p>
+				<div id="title-au">
+					<h2>About us</h2>
+				</div>
+				<div>
+					<p th:text="#{aboutus.message}">
+						placeolder about us
+					</p>
+				</div>
 			</div>
 		</div>
+		<h2>Reserved area</h2>
+		<ul class="list">
+			<li>
+				<a class="link" th:href="@{/login}">Accedi</a>
+			</li>
+			<li>
+				<a class="link" th:href="@{/register}">Registrati</a>
+			</li>
+			<!--<li>
+				<a class="link" th:href="@{/welcomePageAdmin}">Admin page</a>
+			</li>
+			<li>
+				<a class="link" th:href="@{/welcomePageUser}">User page</a>
+			</li>
+			<li>
+				<a class="link" th:href="@{/error}">Error</a>
+			</li>
+			<li>
+				<a class="link" th:href="@{/explore}">Explore</a>
+			</li>
+			<li>
+				<a class="link" th:href="@{/buffet}">Buffet</a>
+			</li>-->
+		</ul>
 		<h2>Contacts</h2>
 		<ul class="list">
 			<li>

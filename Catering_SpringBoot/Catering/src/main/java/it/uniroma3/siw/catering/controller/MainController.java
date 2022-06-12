@@ -4,6 +4,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import it.uniroma3.siw.catering.model.Chef;
+
 @Controller
 public class MainController {
 	
@@ -36,4 +38,5 @@ public class MainController {
 	public String welcomePage(Model model) {
 		return "welcomePage";
 	}
+
 }
