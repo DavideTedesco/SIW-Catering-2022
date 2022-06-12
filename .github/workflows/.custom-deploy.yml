@@ -1,36 +1,17 @@
-# .github/workflows/custom-deploy.yml
+# .github/workflows/heroku-deploy.yml
 on: push
-
 jobs:
-  custom-deploy:
+  heroku-deploy:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: ./Catering_SpringBoot/Catering
+        working-directory: ./Catering_SpringBoot/Catering 
     steps:
       - name: Check out repository
         uses: actions/checkout@v2
+      - name: Deploy to Heroku
+        uses: akhileshns/heroku-deploy@v3.12.12
         with:
-          fetch-depth: 0
-      - name: Heroku login credentials
-        run: |
-          cat > ~/.netrc <<EOF
-            machine api.heroku.com
-              login $HEROKU_EMAIL
-              password $HEROKU_API_KEY
-            machine git.heroku.com
-              login $HEROKU_EMAIL
-              password $HEROKU_API_KEY
-          EOF
-        env:
-          HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
-          HEROKU_EMAIL: ${{ secrets.HEROKU_EMAIL }}
-        working-directory: ./Catering_SpringBoot/Catering
-
-      - name: Add Heroku remote
-        run: heroku create
-        working-directory: ./Catering_SpringBoot/Catering
-
-      - name: Push to Heroku
-        run: git push heroku main:master
-        working-directory: ./Catering_SpringBoot/Catering
+          heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
+          heroku_app_name: ${{ secrets.HEROKU_APP_NAME }}
+          heroku_email: ${{ secrets.HEROKU_EMAIL }}
