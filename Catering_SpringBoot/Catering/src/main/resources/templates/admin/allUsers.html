@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link href="/css/index.css" rel="stylesheet">
+	<link rel="icon" href="/images/cloche.ico" type="image/x-icon">
+	<title>Chefs list</title>
+</head>
+
+<body>
+	<div class="grid-container" th:each="user : ${users}">
+		<div class="grid-item" th:text="${user.nome} +' ' +${user.cognome} + ' '+${user.id}">mimmo</div>
+	</div>
+</body>

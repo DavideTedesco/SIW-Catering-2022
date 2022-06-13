@@ -2,6 +2,8 @@ package it.uniroma3.siw.catering.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -32,8 +34,8 @@ public class ChefController {
 	public String showChefs(Model model) {
 		//		List<Chef> chefs = chefService.getAllChefs();
 		//		model.addAttribute("chefs", chefs);
-		List<User> users = userService.getAllUsers();
-		model.addAttribute("users",users);
+		List<Chef> chefs = chefService.getAllChefs();
+		model.addAttribute("chefs",chefs);
 		return "chefs";
 	}
 
@@ -49,8 +51,10 @@ public class ChefController {
 			Model model) {
 		this.chefValidator.validate(chef, chefBindingResult);
 		if(!chefBindingResult.hasErrors()) {
-			model.addAttribute("chef", chef);
-			return "admin/confirmInsertChef";
+			model.addAttribute("chef", chef);		
+			chefService.save(chef);
+			return "chef";
+			//return "admin/confirmInsertChef";
 		}
 		return "admin/insertChef";
 	}
@@ -60,9 +64,9 @@ public class ChefController {
 //		return "admin/confirmInsertChef";
 //	}
 	
-	@PostMapping("/admin/confirmInsertChef")
-	public String confirmInsertChef(Model model) {
-		Chef chef = (Chef) model.getAttribute("chef");
+	@GetMapping("/admin/confirmInsertChef")
+	public String confirmInsertChef(@ModelAttribute Chef chef, Model model, HttpSession session) {
+		chef = (Chef) model.getAttribute("chef");
 		chefService.save(chef);
 		model.addAttribute("chef",chef);
 		//return this.showChefs(model);

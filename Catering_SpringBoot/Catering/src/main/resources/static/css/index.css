@@ -42,6 +42,11 @@ body {
   display: flex;
 }
 
+#chef-list{
+	margin-top: 5%;
+	margin-bottom: 5%;
+}
+
 .row{
 	width: auto;
 	text-align: center;
@@ -69,6 +74,7 @@ body {
 
 .grid-container {
   display: grid;
+  word-wrap: break-word 
 }
 
 .grid-item{
@@ -78,6 +84,10 @@ body {
 .list{
     list-style: none; 
     text-align: center;
+}
+
+#table-chefs{
+	
 }
 .link{
     display: inline-block; /*By default, anchor tags will be display of inline. We change this behavior to inline-block so that i will allow for the use of margin top and bottom.*/

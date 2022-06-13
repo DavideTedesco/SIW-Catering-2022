@@ -13,10 +13,25 @@
 </head>
 
 <body>
-	<!--<div class="grid-container" th:each="chef : ${chefs}">
-		<div class="grid-item" th:text="${chef.nome} +' ' +${chef.cognome} + ' '+${chef.nazionalita}">mimmo</div>
-	</div>-->
-	<div class="grid-container" th:each="user : ${users}">
-		<div class="grid-item" th:text="${user.nome} +' ' +${user.cognome} + ' '+${user.id}">mimmo</div>
+	<div class="flex-container">
+		<h2 th:text="#{header.chefs}">lista chef</h2>
+		<th:block th:each="chef : ${chefs}">
+			<div id="avatar-image"><img
+					th:src="@{${'https://avatars.dicebear.com/v2/croodles/:'+ chef.nome + chef.cognome +chef.nazionalita + '.svg'}}">
+			</div>
+			<table id="table-chefs">
+				<tr>
+					<div th:text="#{chefname.message}+' '+${chef.nome}">Paolo</div>
+				</tr>
+				<tr>
+					<div th:text="#{chefsurname.message}+' '+${chef.cognome}">Rossi</div>
+				</tr>
+				<tr>
+					<div th:text="#{chefnationality.message}+' '+${chef.nazionalita}">neozelandese</div>
+				</tr>
+				<tr>_______________________________________________</tr>
+			</table>
+		</th:block>
 	</div>
+
 </body>

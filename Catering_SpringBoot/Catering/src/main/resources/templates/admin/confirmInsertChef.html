@@ -12,7 +12,12 @@
 <body>
 	<div class="flex-container">
 		<h4>Confirm insertion of chef</h4>
-		<div><a href:"chef.html" th:href="@{admin/confirmInsertChef}">Conferma l'inserimento<a></div>
+		<form th:action="@{/admin/confirmInsertChef}" method="post">
+n			<input type="hidden" th:field="${chef.nome}" />
+n			<input type="hidden" th:field="${chef.cognome}" />
+n			<input type="hidden" th:field="${chef.nazionalita}" />
+			<button type="submit">Conferma l'inserimento'</button>
+		</form>
 	</div>
 	<footer><a class="link" th:href="@{/index}" th:text="#{error.backhome}">Torna alla</a></footer>
 </body>
