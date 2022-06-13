@@ -10,10 +10,10 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import it.uniroma3.siw.catering.model.Chef;
-import it.uniroma3.siw.catering.model.User;
 import it.uniroma3.siw.catering.service.ChefService;
 import it.uniroma3.siw.catering.service.UserService;
 import it.uniroma3.siw.catering.validator.ChefValidator;
@@ -37,6 +37,22 @@ public class ChefController {
 		List<Chef> chefs = chefService.getAllChefs();
 		model.addAttribute("chefs",chefs);
 		return "chefs";
+	}
+	
+	@GetMapping({"/admin/chefs"})
+	public String showAdminChefs(Model model) {
+		//		List<Chef> chefs = chefService.getAllChefs();
+		//		model.addAttribute("chefs", chefs);
+		List<Chef> chefs = chefService.getAllChefs();
+		model.addAttribute("chefs",chefs);
+		return "admin/chefs";
+	}
+	
+	@GetMapping("/admin/removeChef/{id}")
+	public String removeChef(@PathVariable("id") Long id ,Model model) {
+		chefService.deleteById(id);
+		model.addAttribute("chefs", chefService.getAllChefs());
+		return "admin/chefs";
 	}
 
 	@GetMapping("/admin/insertChef")

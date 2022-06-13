@@ -34,6 +34,11 @@ public class MainController {
 		return "admin/adminWelcomePage";
 	}
 	
+	@GetMapping({"/admin/explore"})
+	public String adminExplore(Model model) {
+		return "admin/explore";
+	}
+	
 	@GetMapping({"/welcomePage"})
 	public String welcomePage(Model model) {
 		return "welcomePage";

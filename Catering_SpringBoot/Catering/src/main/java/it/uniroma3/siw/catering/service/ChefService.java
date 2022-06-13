@@ -15,20 +15,24 @@ import it.uniroma3.siw.catering.repository.ChefRepository;
 public class ChefService {
 
 	@Autowired
-	private ChefRepository chefRepo;
+	private ChefRepository chefRepository;
 	
 	@Transactional
 	public Chef save(Chef chef) {
-		return chefRepo.save(chef);
+		return chefRepository.save(chef);
 	}
 		
 	@Transactional
 	public List<Buffet> getChefBuffet(Chef chef){
-		return chefRepo.getAllChefBuffet(chef);
+		return chefRepository.getAllChefBuffet(chef);
 	}
 
 	@Transactional
 	public List<Chef> getAllChefs(){
-		return (List<Chef>) chefRepo.findAll();
+		return (List<Chef>) chefRepository.findAll();
+	}
+
+	public void deleteById(Long id) {	
+		chefRepository.deleteById(id);
 	}
 }
