@@ -26,9 +26,14 @@ Repository of the Exam project for the realisation of a Spring Boot Application 
 
 ### Admin use cases
 - insert a new Chef
+- show Chefs
+- show Buffets
+- show Dishes
+- show Ingredients
 - edit an Ingredient
 
 ### User use cases
-- show Buffets by Chef
-- show Dishes from a Buffet
-- show Details of an Ingredient from a Dish
+- show Buffets
+- show Chefs
+- show Dishes
+- show Ingredients
