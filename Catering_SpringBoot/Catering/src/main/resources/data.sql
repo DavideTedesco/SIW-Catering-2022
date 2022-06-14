@@ -1,3 +1,5 @@
+/*============ENTITY TABLES=============*/
+
 /*Users*/
 /*insert into users(id, nome, cognome ) values('200','admin','admin');*/
 /*insert into users(id, nome, cognome ) values('200','user','user');*/
@@ -14,18 +16,28 @@
 /*insert into chef(id, cognome, nazionalita, nome) values('500', 'Tortilla', 'Spagnola', 'Fernando');*/
 
 /*Buffet*/
-/*insert into buffet(id, categoria, descrizione, nome, chef_id) values('23', 'carnivoro','Gran buffet di carne', 'Grand viande', '300');*/
+insert into buffet(id, categoria, descrizione, nome, chef_id) values('23', 'carnivoro','Gran buffet di carne', 'Grand viande', '300');
+insert into buffet(id, categoria, descrizione, nome, chef_id) values('42', 'vegano','Gran buffet di verdure', 'OK', '16');
+insert into buffet(id, categoria, descrizione, nome, chef_id) values('52', 'onnivoro','Gran buffet variegato', 'Mix', '20');
 
 /*Piatto*/
-insert into piatto(id, descrizione, nome) values('300', 'la migliore bistecca che potrai mai mangiare', 'Bistecca ai ferri');
+/*insert into piatto(id, descrizione, nome) values('300', 'la migliore bistecca che potrai mai mangiare', 'Bistecca ai ferri');*/
 
-/*Ingredienti*/
+/*Ingrediente*/
+/*
 insert into ingrediente(id, nome, origine, descrizione) values('100', 'Scottona', 'Toscana', 'la miglior carne di vacca');
 insert into ingrediente(id, nome, origine, descrizione) values('110', 'Sale', 'Ceccano', 'Sale della fronte di Antonio Mattone');
 insert into ingrediente(id, nome, origine, descrizione) values('120', 'Pepe', 'Roma', 'pepe del tizio dei té');
-
+*/
 /*============JOIN TABLES=============*/
+
+/*chef_buffets*/
+
+/*buffet_piatti*/
+
 /*piatto_ingredienti*/
+/*
 insert into piatto_ingredienti(piatto_id, ingredienti_id) values('300', '100');
 insert into piatto_ingredienti(piatto_id, ingredienti_id) values('300', '110');
 insert into piatto_ingredienti(piatto_id, ingredienti_id) values('300', '120');
+*/

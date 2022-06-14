@@ -1,16 +1,18 @@
+<!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
+
 <head>
 	<meta charset="UTF-8" />
 	<link href="/css/index.css" rel="stylesheet">
-	<link rel="icon" href="/images/cloche.ico" type="image/x-icon">
-	<title>Buffet editing</title>
+	<title>Modifica di uno chef</title>
 </head>
+
 <body>
 	 <div class="flex-container">
 
 		<h4>Edit chef</h4>
 
-		<form th:action="@{'/admin' + '/' +'editBuffet' + '/' + ${buffet.id}}" method="POST">
+		<form th:action="@{'/admin' + '/' +'editChef' + '/' + ${chef.id}}" method="POST">
 			<div>
 				<span>Nome:</span>
 				<span><input name="nome" type="text" placeholder="name" th:field="${chef.nome}" th:value="${chef.nome}"

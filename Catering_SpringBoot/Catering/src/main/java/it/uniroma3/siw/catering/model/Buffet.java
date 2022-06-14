@@ -73,6 +73,14 @@ public class Buffet {
 	public void setCategoria(String categoria) {
 		this.categoria = categoria;
 	}
+
+	public Chef getChef() {
+		return chef;
+	}
+
+	public void setChef(Chef chef) {
+		this.chef = chef;
+	}
 	
 	
 	

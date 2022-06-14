@@ -11,9 +11,13 @@ body {
   background-color: #6f2d3a;
   display: grid;
   place-content: center;
-  color: white;
-  /*background-image: url("/images/6-rough-seamless-recycled-vintage-paper-texture-1.jpg");
-	*/
+  color: #FFFDD0;
+  font-size: 12pt;
+  /*background-image: url("/images/FoodAndDrinkDesignWhite.svg");
+  background-repeat: no-repeat;
+  background-position: 50% 0;
+  background-size: cover;
+  background-blend-mode: color-dodge;*/
 }
 #logo{
 	width: 5%;
@@ -31,8 +35,22 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  position: absolute;
   align-items: center;
+
 }
+
+#centrator-login{
+    margin-top: 100%;
+	margin-left: 400%;
+    text-align: center;   
+}
+
+#centrator{
+	margin-left: 100%;
+    text-align: center;   
+}
+
 
 #campi{
   display: flex;
@@ -87,8 +105,12 @@ body {
 }
 
 #table-chefs{
-	
 }
+
+.button{
+align-items: center;
+}
+
 .link{
     display: inline-block; 
     margin-block: 2px; 

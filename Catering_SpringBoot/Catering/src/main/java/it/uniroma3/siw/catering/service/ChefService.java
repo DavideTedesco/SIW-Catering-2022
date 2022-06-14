@@ -32,7 +32,14 @@ public class ChefService {
 		return (List<Chef>) chefRepository.findAll();
 	}
 
+	@Transactional
 	public void deleteById(Long id) {	
 		chefRepository.deleteById(id);
 	}
+	
+	@Transactional
+	public Chef findById(Long id) {
+		return chefRepository.findById(id).get();
+	}
+	
 }

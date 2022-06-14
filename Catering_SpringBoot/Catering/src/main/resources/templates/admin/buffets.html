@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link href="/css/index.css" rel="stylesheet">
+	<link rel="icon" href="/images/cloche.ico" type="image/x-icon">
+	<title>Explore</title>
+</head>
+
+<body>
+	<div class="flex-container">
+		<h2 th:text="#{buffetslist.name}">lista buffet</h2>
+		<th:block th:each="buffet : ${buffets}">
+			<table>
+				<!--<tr th:if="${buffets.empty}">
+					No buffets available
+				</tr>-->
+				<div id="avatar-image"><img src="/images/fork-plate-knife.svg" width="80%">
+				</div>
+				<tr>
+					<div th:text="#{chefname.message}+' '+${buffet.chef.nome}">b</div>
+				</tr>
+				<tr>
+					<div th:text="#{chefsurname.message}+' '+${buffet.chef.cognome}">b</div>
+				</tr>
+				<tr>
+					<div th:text="#{buffetname.message}+' '+${buffet.nome}">a</div>
+				</tr>
+				<tr>
+					<div th:text="#{buffetcategory.message}+' '+${buffet.categoria}">c</div>
+				</tr>
+				<tr>
+					<div th:text="#{buffetdescription.message}+' '+${buffet.descrizione}">c</div>
+				</tr>
+				<tr>
+					<span>
+						<a class="link" th:href="@{'/admin' + '/' +'removeBuffet' + '/' + ${buffet.id}}"> Rimuovi</a>
+					</span>
+				</tr>
+				<tr>
+					<span>
+						<a class="link" th:href="@{'/admin' + '/' +'editBuffet' + '/' + ${buffet.id}}"> Modifica</a>
+					</span>
+				</tr>
+				<tr>_______________________________________________</tr>
+			</table>
+		</th:block>
+		<footer><a class="link" th:href="@{/index}" th:text="#{error.backhome}">Torna alla</a></footer>
+	</div>
+</body>
+
+</html>

@@ -10,12 +10,13 @@
 </head>
 
 <body>
+<!--PAGINA NON UTILIZZATA-->
 	<div class="flex-container">
 		<h4>Confirm insertion of chef</h4>
 		<form th:action="@{/admin/confirmInsertChef}" method="post">
-n			<input type="hidden" th:field="${chef.nome}" />
-n			<input type="hidden" th:field="${chef.cognome}" />
-n			<input type="hidden" th:field="${chef.nazionalita}" />
+			<input type="hidden" th:field="${chef.nome}" />
+			<input type="hidden" th:field="${chef.cognome}" />
+			<input type="hidden" th:field="${chef.nazionalita}" />
 			<button type="submit">Conferma l'inserimento'</button>
 		</form>
 	</div>

@@ -14,26 +14,30 @@ import it.uniroma3.siw.catering.repository.BuffetRepository;
 public class BuffetService {
 	
 	@Autowired
-	private BuffetRepository buffetRepo;
+	private BuffetRepository buffetRepository;
 	
 	@Transactional
 	public Buffet save(Buffet buffet) {
-		return buffetRepo.save(buffet);
+		return buffetRepository.save(buffet);
 	}
 	
 	@Transactional
-	public List<Buffet> findAllBuffet() {
-		return (List<Buffet>) buffetRepo.findAll();
+	public List<Buffet> getAllBuffets() {
+		return (List<Buffet>) buffetRepository.findAll();
 	}
 	
 	@Transactional
 	public List<Buffet> buffetPerCategoria(String Categoria){
-		return buffetRepo.findByCategoria(Categoria);
+		return buffetRepository.findByCategoria(Categoria);
 	}
 	
 	@Transactional
 	public List<Buffet> buffetPerChef(String nomeChef, String cognomeChef){
-		return buffetRepo.buffetPerChef(nomeChef, cognomeChef);
+		return buffetRepository.buffetPerChef(nomeChef, cognomeChef);
+	}
+
+	public void deleteById(Long id) {
+		buffetRepository.deleteById(id);
 	}
 }
 
