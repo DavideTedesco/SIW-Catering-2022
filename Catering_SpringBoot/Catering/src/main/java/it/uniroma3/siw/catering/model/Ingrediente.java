@@ -22,9 +22,6 @@ public class Ingrediente {
 	private String origine;
 	
 	private String descrizione;
-	
-	@ManyToMany(cascade = CascadeType.PERSIST, fetch = FetchType.EAGER)
-	List<Ingrediente> ingredienti;
 
 	public Long getId() {
 		return id;
