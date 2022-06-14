@@ -13,8 +13,9 @@
 </head>
 
 <body>
-	<div class="flex-container">
-		<h2 th:text="#{buffetslist.name}">lista buffet</h2>
+
+	<div class="flex-container2">
+		<h1 th:text="#{buffetslist.name}">lista buffet</h1>
 		<th:block th:each="buffet : ${buffets}">
 			<table>
 				<!--<tr th:if="${buffets.empty}">
@@ -38,19 +39,23 @@
 					<div th:text="#{buffetdescription.message}+' '+${buffet.descrizione}">c</div>
 				</tr>
 				<tr>
-					<span>
-						<a class="link" th:href="@{'/admin' + '/' +'removeBuffet' + '/' + ${buffet.id}}"> Rimuovi</a>
-					</span>
+					<div>
+						<a class="link" th:href="@{'/admin' + '/' +'removeBuffet' + '/' + ${buffet.id}}">
+							Rimuovi</a>
+					</div>
 				</tr>
 				<tr>
-					<span>
+					<div>
 						<a class="link" th:href="@{'/admin' + '/' +'editBuffet' + '/' + ${buffet.id}}"> Modifica</a>
-					</span>
+					</div>
 				</tr>
-				<tr>_______________________________________________</tr>
+				<tr>
+					<div>_______________________________________________</div>
+				</tr>
 			</table>
 		</th:block>
 		<footer><a class="link" th:href="@{/index}" th:text="#{error.backhome}">Torna alla</a></footer>
+
 	</div>
 </body>
 

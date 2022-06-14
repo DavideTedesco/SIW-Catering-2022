@@ -13,7 +13,7 @@
 </head>
 
 <body>
-	<div class="flex-container">
+	<div class="flex-container2">
 		<div >
 			<h2 th:text="#{header.chefs}">lista chef</h2>
 			<div><a class="link" th:href="@{/admin/explore}" th:text="#{go.previous}">Torna alla</a></div>
@@ -22,6 +22,7 @@
 						th:src="@{${'https://avatars.dicebear.com/v2/croodles/:'+ chef.nome + chef.cognome +chef.nazionalita + '.svg'}}">
 				</div>
 				<table id="table-chefs">
+				<div>
 					<tr>
 						<div th:text="#{chefname.message}+' '+${chef.nome}">Paolo</div>
 					</tr>
@@ -32,16 +33,17 @@
 						<div th:text="#{chefnationality.message}+' '+${chef.nazionalita}">neozelandese</div>
 					</tr>
 					<tr>
-						<span>
-							<a th:href="@{'/admin' + '/' +'removeChef' + '/' + ${chef.id}}"> Rimuovi</a>
-						</span>
+						<div>
+							<a class="link" th:href="@{'/admin' + '/' +'removeChef' + '/' + ${chef.id}}"> Rimuovi</a>
+						</div>
 					</tr>
 					<tr>
-						<span>
-							<a th:href="@{'/admin' + '/' +'editChef' + '/' + ${chef.id}}"> Modifica</a>
-						</span>
+						<div>
+							<a class="link" th:href="@{'/admin' + '/' +'editChef' + '/' + ${chef.id}}"> Modifica</a>
+						</div>
 					</tr>
-					<tr>_______________________________________________</tr>
+					<tr><div>_______________________________________________</div></tr>
+				</div>
 				</table>
 			</th:block>
 			<footer><a class="link" th:href="@{/index}" th:text="#{error.backhome}">Torna alla</a></footer>

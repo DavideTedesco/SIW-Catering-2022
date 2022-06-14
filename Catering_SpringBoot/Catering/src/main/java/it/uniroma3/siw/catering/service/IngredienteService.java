@@ -1,5 +1,7 @@
 package it.uniroma3.siw.catering.service;
 
+import java.util.List;
+
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,10 +14,15 @@ import it.uniroma3.siw.catering.repository.IngredienteRepository;
 public class IngredienteService {
 	
 	@Autowired
-	private IngredienteRepository ingredienteRepo;
+	private IngredienteRepository ingredienteRepository;
 	
 	@Transactional
 	public Ingrediente save(Ingrediente ingrediente) {
-		return ingredienteRepo.save(ingrediente);
+		return ingredienteRepository.save(ingrediente);
+	}
+
+	@Transactional
+	public List<Ingrediente> getAllIngredientes() {
+		return (List<Ingrediente>)ingredienteRepository.findAll();
 	}
 }

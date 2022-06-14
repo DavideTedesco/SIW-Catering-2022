@@ -13,7 +13,7 @@
 </head>
 
 <body>
-	<div class="flex-container">
+	<div class="flex-container-list">
 		<h2 th:text="#{header.chefs}">lista chef</h2>
 		<th:block th:each="chef : ${chefs}">
 			<div id="avatar-image"><img
@@ -32,6 +32,8 @@
 				<tr>_______________________________________________</tr>
 			</table>
 		</th:block>
+		<footer><a class="link" th:href="@{/index}" th:text="#{error.backhome}">Torna alla</a></footer>
+
 	</div>
 
 </body>

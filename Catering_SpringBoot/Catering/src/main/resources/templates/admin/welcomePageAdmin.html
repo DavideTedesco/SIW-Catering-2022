@@ -1,25 +1,30 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
+
 <head>
 	<meta charset="UTF-8" />
 	<link href="/css/index.css" rel="stylesheet">
 	<link rel="icon" href="/images/cloche.ico" type="image/x-icon">
 	<title>Admin page</title>
 </head>
+
 <body>
-	<div class="flex-container">
+	<div class="flex-container2">
 		<div id="welcome-page">
 			<h1 th:text="#{welcome}+' '+${user.nome}"></h1>
-			    <h2>Realizza una modifica</h2>
-			   			    <div id="avatar-image"><img th:src="@{${'https://avatars.dicebear.com/v2/croodles/:'+ credentials.username + '.svg'}}"></div>
-
-			    <div><a class="link" th:href="@{admin/insertChef}">Inserisci uno chef</a></div>
-			    <div><a class="link" th:href="@{admin/editBuffet}">Modifica un buffet esistente</a></div>
-			  <div><a class="link" th:href="@{admin/explore}">Explore</a></div>
+			 <div id="avatar-image"><img
+					th:src="@{${'https://avatars.dicebear.com/v2/croodles/:'+ credentials.username + '.svg'}}"></div>
+			<h2>Realizza una modifica</h2>
+			  <div><a class="link" th:href="@{admin/insertChef}">Inserisci uno chef</a></div>
+			  <div><a class="link" th:href="@{admin/insertIngredient}">Inserisci un ingrediente</a></div>
+			  <!--<div><a class="link" th:href="@{admin/editBuffet}">Modifica un buffet esistente</a></div>-->			  
+			  <div><a class="link" th:href="@{admin/explore}">Explore</a></div>
+			  <div><a class="link" th:href="@{admin/allUsers}">Lista degli utenti</a></div>
 			  <div><a class="link" th:href="@{/logout}">Log out</a></div>
 		</div>
+			<footer><a class="link" th:href="@{/index}" th:text="#{error.backhome}">Torna alla pagina prec</a></footer>
 	</div>
-	<footer><a class="link" th:href="@{/index}" th:text="#{error.backhome}">Torna alla</a></footer>
 
 </body>
+
 </html>

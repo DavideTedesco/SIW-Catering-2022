@@ -13,16 +13,13 @@
 </head>
 
 <body>
-	<div class="flex-container">
-		<ul>
-			<li>
-				<a class="link" th:href="@{/chefs}">Esplora la nostra scelta per chef</a>
-			</li>
-			<li>
-				<a class="link" th:href="@{/buffets}">Esplora la nostra scelta per buffets</a>
-			</li>
-			<!--<li>
-				<a class="link" th:href="@{/categories}">Esplora la nostra scelta per categoria</a>
-			</li>-->
-	</div>
+	<h1>Explore</h1>
+	<ul>
+		<li>
+			<a class="link" th:href="@{/chefs}">Esplora la nostra scelta per chef</a>
+		</li>
+		<li>
+			<a class="link" th:href="@{/buffets}">Esplora la nostra scelta per buffets</a>
+		</li>
+		<footer><a class="link" th:href="@{/index}" th:text="#{error.backhome}">Torna alla</a></footer>
 </body>

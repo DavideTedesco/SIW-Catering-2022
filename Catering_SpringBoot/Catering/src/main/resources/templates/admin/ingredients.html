@@ -14,28 +14,20 @@
 
 <body>
 	<div class="flex-container2">
-		<h2 th:text="#{buffetslist.name}">lista buffet</h2>
-		<th:block th:each="buffet : ${buffets}">
+		<h2 th:text="#{ingredientlist.name}">lista ingredienti</h2>
+		<th:block th:each="ingrediente : ${ingredientes}">
 			<table>
-				<!--<tr th:if="${buffets.empty}">
-					No buffets available
+				<!--<tr th:if="${ingredientes.empty}">
+					No ingredients available
 				</tr>-->
-				<div id="avatar-image"><img src="/images/fork-plate-knife.svg" width="80%">
-				</div>
 				<tr>
-					<div th:text="#{chefname.message}+' '+${buffet.chef.nome}">b</div>
+					<div th:text="#{ingredientename.message}+' '+${ingrediente.nome}">a</div>
 				</tr>
 				<tr>
-					<div th:text="#{chefsurname.message}+' '+${buffet.chef.cognome}">b</div>
+					<div tth:text="#{ingredientorigin.message}+' '+${ingrediente.origine}">c</div>
 				</tr>
 				<tr>
-					<div th:text="#{buffetname.message}+' '+${buffet.nome}">a</div>
-				</tr>
-				<tr>
-					<div th:text="#{buffetcategory.message}+' '+${buffet.categoria}">c</div>
-				</tr>
-				<tr>
-					<div th:text="#{buffetdescription.message}+' '+${buffet.descrizione}">c</div>
+					<div th:text="#{ingredientdescription.message}+' '+${ingrediente.descrizione}">c</div>
 				</tr>
 				<tr>_______________________________________________</tr>
 			</table>
