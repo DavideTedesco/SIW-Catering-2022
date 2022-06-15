@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import it.uniroma3.siw.catering.model.Buffet;
+import it.uniroma3.siw.catering.model.Chef;
 import it.uniroma3.siw.catering.repository.BuffetRepository;
 
 @Service
@@ -31,13 +32,17 @@ public class BuffetService {
 		return buffetRepository.findByCategoria(Categoria);
 	}
 	
-	@Transactional
-	public List<Buffet> buffetPerChef(String nomeChef, String cognomeChef){
-		return buffetRepository.buffetPerChef(nomeChef, cognomeChef);
-	}
+//	@Transactional
+//	public List<Buffet> buffetPerChef(Chef chef){
+//		return buffetRepository.ﬁndByChefId(chef);
+//	}
 
 	public void deleteById(Long id) {
 		buffetRepository.deleteById(id);
+	}
+	@Transactional
+	public Buffet findById(Long id) {
+		return buffetRepository.findById(id).get();
 	}
 }
 

@@ -9,25 +9,18 @@
 
 	<link href="/css/index.css" rel="stylesheet">
 	<link rel="icon" href="/images/cloche.ico" type="image/x-icon">
-	<title>Explore</title>
+	<title>Bufffet for chef</title>
 </head>
 
 <body>
-	<div class="flex-container-list">
+	<div class="flex-container2">
 		<h2 th:text="#{buffetslist.name}">lista buffet</h2>
-		<th:block th:each="buffet : ${buffets}">
+		<div th:text="#{chefname.message}+' '+${chef.nome}">b</div>
+		<div th:text="#{chefsurname.message}+' '+${chef.cognome}">b</div>
+
+		<th:block th:each="buffet : ${chef.buffets}">
 			<table>
-				<!--<tr th:if="${buffets.empty}">
-					No buffets available
-				</tr>-->
-				<div id="buffet-image"><img src="/images/fork-plate-knife.svg" width="80%">
-				</div>
-				<tr>
-					<div th:text="#{chefname.message}+' '+${buffet.chef.nome}">b</div>
-				</tr>
-				<tr>
-					<div th:text="#{chefsurname.message}+' '+${buffet.chef.cognome}">b</div>
-				</tr>
+				
 				<tr>
 					<div th:text="#{buffetname.message}+' '+${buffet.nome}">a</div>
 				</tr>
@@ -38,7 +31,7 @@
 					<div th:text="#{buffetdescription.message}+' '+${buffet.descrizione}">c</div>
 				</tr>
 				<tr>
-					<div><a class="link" th:href="@{'dishesForBuffet' + '/' + ${buffet.id}}">Visita i piatti di questo buffet</a></div>
+					<div><a class="link" th:href="@{'/dishesForBuffet' + '/' + ${buffet.id}}">Visita i piatti di questo buffet</a></div>
 				</tr>
 				<tr>_______________________________________________</tr>
 			</table>

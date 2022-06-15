@@ -14,14 +14,14 @@
 
 <body>
 
-	<div class="flex-container2">
+	<div class="flex-container-list">
 		<h1 th:text="#{buffetslist.name}">lista buffet</h1>
 		<th:block th:each="buffet : ${buffets}">
 			<table>
 				<!--<tr th:if="${buffets.empty}">
 					No buffets available
 				</tr>-->
-				<div id="avatar-image"><img src="/images/fork-plate-knife.svg" width="80%">
+				<div id="buffet-image"><img src="/images/fork-plate-knife.svg" width="80%">
 				</div>
 				<tr>
 					<div th:text="#{chefname.message}+' '+${buffet.chef.nome}">b</div>

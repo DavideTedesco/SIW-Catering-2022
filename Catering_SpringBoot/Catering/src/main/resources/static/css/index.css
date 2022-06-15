@@ -111,6 +111,11 @@ section {
     padding-left: 25%
 }
 
+#buffet-image{
+	width: 50%;
+    image-rendering:smooth;
+}
+
 #title-au{
 	text-align: center;
 }

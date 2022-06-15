@@ -29,7 +29,10 @@
 				<tr>
 					<div th:text="#{chefnationality.message}+' '+${chef.nazionalita}">neozelandese</div>
 				</tr>
-				<tr>_______________________________________________</tr>
+				<tr>
+					<div><a class="link" th:href="@{'chefBuffets' + '/' + ${chef.id}}">Visita i buffet di questo chef</a></div>
+				</tr>
+				<tr><div>_______________________________________________<div></tr>
 			</table>
 		</th:block>
 		<footer><a class="link" th:href="@{/index}" th:text="#{error.backhome}">Torna alla</a></footer>

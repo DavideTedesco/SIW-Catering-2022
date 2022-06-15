@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link href="/css/index.css" rel="stylesheet">
+	<link rel="icon" href="/images/cloche.ico" type="image/x-icon">
+	<title>Dishes for buffet</title>
+</head>
+
+<body>
+	<div class="flex-container-list">
+		<h2 th:text="#{dishesslist.name}">lista dei piatti</h2>
+
+		<th:block th:each="piatto : ${buffet.piatti}">
+
+			<table>
+
+				<tr>
+					<div th:text="#{dishname.message}+' '+${piatto.nome}">a</div>
+				</tr>
+				<tr>
+					<div th:text="#{dishdescription.message}+' '+${piatto.descrizione}">c</div>
+				</tr>
+				<tr>_______________________________________________</tr>
+			</table>
+		</th:block>
+		<footer><a class="link" th:href="@{/index}" th:text="#{error.backhome}">Torna alla</a></footer>
+	</div>
+</body>
+
+</html>
