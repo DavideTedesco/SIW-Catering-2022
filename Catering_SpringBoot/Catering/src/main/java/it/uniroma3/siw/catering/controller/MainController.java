@@ -18,6 +18,11 @@ public class MainController {
 		return "index";
 	}
 	
+	@GetMapping({"/loginError"})
+	public String loginError(Model model) {
+		return "loginError";
+	}
+	
 	@GetMapping({"/explore"})
 	public String explore(Model model) {
 		return "explore";

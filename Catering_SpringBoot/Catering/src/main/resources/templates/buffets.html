@@ -7,7 +7,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<link href="/css/index.css" rel="stylesheet">
+	<link href="/css/style.css" rel="stylesheet">
 	<link rel="icon" href="/images/cloche.ico" type="image/x-icon">
 	<title>Explore</title>
 </head>
@@ -23,19 +23,19 @@
 				<div id="buffet-image"><img src="/images/fork-plate-knife.svg" width="80%">
 				</div>
 				<tr>
-					<div th:text="#{chefname.message}+' '+${buffet.chef.nome}">b</div>
+					<div th:text="#{chefname.message}+' '+${buffet.chef.nome}">nome chef</div>
 				</tr>
 				<tr>
-					<div th:text="#{chefsurname.message}+' '+${buffet.chef.cognome}">b</div>
+					<div th:text="#{chefsurname.message}+' '+${buffet.chef.cognome}">cognome chef</div>
 				</tr>
 				<tr>
-					<div th:text="#{buffetname.message}+' '+${buffet.nome}">a</div>
+					<div th:text="#{buffetname.message}+' '+${buffet.nome}"></div>
 				</tr>
 				<tr>
-					<div th:text="#{buffetcategory.message}+' '+${buffet.categoria}">c</div>
+					<div th:text="#{buffetcategory.message}+' '+${buffet.categoria}"></div>
 				</tr>
 				<tr>
-					<div th:text="#{buffetdescription.message}+' '+${buffet.descrizione}">c</div>
+					<div th:text="#{buffetdescription.message}+' '+${buffet.descrizione}"></div>
 				</tr>
 				<tr>
 					<div><a class="link" th:href="@{'dishesForBuffet' + '/' + ${buffet.id}}">Visita i piatti di questo buffet</a></div>

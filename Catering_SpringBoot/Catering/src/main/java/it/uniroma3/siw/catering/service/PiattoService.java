@@ -5,6 +5,7 @@ import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import it.uniroma3.siw.catering.model.Ingrediente;
 import it.uniroma3.siw.catering.model.Piatto;
 import it.uniroma3.siw.catering.repository.PiattoRepository;
 
@@ -12,12 +13,15 @@ import it.uniroma3.siw.catering.repository.PiattoRepository;
 public class PiattoService {
 	
 	@Autowired
-	private PiattoRepository piattoRepo;
+	private PiattoRepository piattoRepository;
 	
 	@Transactional
 	public Piatto aggiungiPiatto(Piatto piatto) {
-		return piattoRepo.save(piatto);
+		return piattoRepository.save(piatto);
 	}
 	
+	public Piatto findById(Long id) {
+		return piattoRepository.findById(id).get();
+	}
 	
 }

@@ -5,51 +5,51 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link href="/css/index.css" rel="stylesheet">
+	<link href="/css/style.css" rel="stylesheet">
 	<link rel="icon" href="/images/cloche.ico" type="image/x-icon">
 </head>
 
 <body>
 	<div class="flex-container2">
-		<h4>Register</h4>
+		<h1>Register</h1>
+
+		<form class="former" th:action="@{/register}" method="POST">
+			<div class="input">
+				<span>Nome:</span>
+				<span><input name="name" type="text" placeholder="name" th:field="${user.nome}" required /></span>
+				<span th:if="${#fields.hasErrors('user.nome')}" th:errors="${credentials.username}"
+					th:style="'color:red'"></span>
+			</div>
+			<div class="input">
+				<span>Cognome:</span>
+				<span><input name="cognome" type="text" placeholder="cognome" th:field="${user.cognome}"
+						required /></span>
+				<span th:if="${#fields.hasErrors('user.cognome')}" th:errors="${credentials.username}"
+					th:style="'color:red'"></span>
+			</div>
+			<div class="input">
+				<span>Username:</span>
+				<span><input name="username" type="text" placeholder="username" th:field="${credentials.username}"
+						required /></span>
+				<span th:if="${#fields.hasErrors('credentials.username')}" th:errors="${credentials.username}"
+					th:style="'color:red'"></span>
+			</div>
+
+			<div class="input">
+				<span>Password:</span>
+				<span><input name="password" type="password" placeholder="password" th:field="${credentials.password}"
+						required /></span>
+				<span th:if="${#fields.hasErrors('credentials.password')}" th:errors="${credentials.username}"
+					th:style="'color:red'"></span>
+			</div>
+			<div class="button">
+				<span><button type="submit">Register</button></span>
+			</div>
+		</form>
+		<footer>
+			<div><a class="link" th:href="@{/index}" th:text="#{backhome.message}">Torna alla</a></div>
+		</footer>
 	</div>
-	<form th:action="@{/register}" method="POST">
-		<div>
-			<span>Nome:</span>
-			<span><input name="name" type="text" placeholder="name" th:field="${user.nome}" required /></span>
-			<span th:if="${#fields.hasErrors('user.nome')}" th:errors="${credentials.username}"
-				th:style="'color:red'"></span>
-		</div>
-		<div>
-			<span>Cognome:</span>
-			<span><input name="cognome" type="text" placeholder="cognome" th:field="${user.cognome}" required /></span>
-			<span th:if="${#fields.hasErrors('user.cognome')}" th:errors="${credentials.username}"
-				th:style="'color:red'"></span>
-		</div>
-		<div>
-			<span>Username:</span>
-			<span><input name="username" type="text" placeholder="username" th:field="${credentials.username}"
-					required /></span>
-			<span th:if="${#fields.hasErrors('credentials.username')}" th:errors="${credentials.username}"
-				th:style="'color:red'"></span>
-		</div>
-		<!--<div>
-			<span>Email:</span>
-			<span><input name="email" type="text" placeholder="email" th:field="${credentials.email}"  required /></span>
-		</div>-->
-		<div>
-			<span>Password:</span>
-			<span><input name="password" type="password" placeholder="password" th:field="${credentials.password}"
-					required /></span>
-			<span th:if="${#fields.hasErrors('credentials.password')}" th:errors="${credentials.username}"
-				th:style="'color:red'"></span>
-		</div>
-		<div>
-			<span><button type="submit">Register</button></span>
-		</div>
-	</form>
-	</div>
-	<div><a class="link" th:href="@{/index}" th:text="#{error.backhome}">Torna alla</a></div>
 
 </body>
 

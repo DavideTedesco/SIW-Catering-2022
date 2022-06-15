@@ -5,7 +5,7 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link href="/css/index.css" rel="stylesheet">
+	<link href="/css/style.css" rel="stylesheet">
 	<link rel="icon" href="/images/cloche.ico" type="image/x-icon">
 </head>
 
@@ -13,27 +13,26 @@
 
 	<div class="flex-container2">
 		<div>
-			<h4>Login</h4>
+			<h1>Login</h1>
 			<form th:action="@{/login}" method="POST">
 				<div>
-					<div>
+					<div class="input">
 						<span>Username:</span>
-						<span><input name="username" type="text" required /></span>
+						<span><input name="username" type="text" placeholder="username" required /></span>
+						
 					</div>
-					<div>
+					<div class="input">
 						<span>Password:</span>
-						<span><input name="password" type="password" required /></span>
+						<span><input name="password" type="password" placeholder="password" required /></span>
 					</div>
 					<div class="button">
 						<button type="submit">Login</button>
 					</div>
 				</div>
 			</form>
-			<!--<div>
-		<div><a class="link" th:href="@{/admin/login}" th:text="#{admin.areyou}">pippo</a></div>
-	</div>-->
+			
 			<footer>
-				<div><a class="link" th:href="@{/index}" th:text="#{error.backhome}">Torna alla</a></div>
+				<div><a class="link" th:href="@{/index}" th:text="#{backhome.message}">Torna alla</a></div>
 			</footer>
 		</div>
 	</div>

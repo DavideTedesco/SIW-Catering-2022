@@ -44,10 +44,9 @@ public class AuthenticationController {
 	
 	@RequestMapping(value = "/logout", method = RequestMethod.GET) 
 	public String logout(Model model) {
-		return "index";
+		return "login";
 	}
 	
-    //@RequestMapping(value = "/default", method = RequestMethod.GET)
 	@GetMapping("/default")
     public String defaultAfterLogin(Model model) {
         
