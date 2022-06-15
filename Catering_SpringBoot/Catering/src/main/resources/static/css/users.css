@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=Heebo:wght@100&family=Prompt:wght@300;400&display=swap');
+
+
+
+body {
+    font-family: 'Prompt', sans-serif;
+  height: 100vh;
+  /*background-color: #6f2d3a;*/
+  background-color: #af2d3a;
+  /*background-image: linear-gradient(180deg, #6f2d3a, navy);*/
+  display: grid;
+  color: #FFFDD0;
+  font-size: 12pt;
+  /*background-image: url("/images/FoodAndDrinkDesignWhite.svg");
+  background-repeat: no-repeat;
+  background-position: 50% 0;
+  background-size: cover;
+  background-blend-mode: color-dodge;*/
+}
+
+#title{
+	text-align: center;
+}
+#tabella{
+	width: 100%;
+	height: 200px;
+	text-align: center;
+	table-layout: fixed;
+	border-collapse: collapse;
+}
+
+#table-container{
+	margin-top: 15%;
+	margin-bottom: 8%;
+	padding: 0 5%;
+}
+
+.link{
+    display: inline-block; 
+    margin-block: 2px; 
+    text-decoration: none; 
+    color: gold;
+    position: relative;
+}
+.link::after{
+    content: '';
+    width: 100%;
+    height: 1px;
+    background-color: #bed86b;
+    border-radius: 4px; 
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform .40s ease;
+}
+.link:hover::after{
+    transform: scaleX(1);
+}

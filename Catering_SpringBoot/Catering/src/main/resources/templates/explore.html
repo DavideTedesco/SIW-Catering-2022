@@ -13,13 +13,16 @@
 </head>
 
 <body>
-	<h1>Explore</h1>
-	<ul>
+	<h1 th:text="#{explore}">Explore</h1>
+	<ul class="list">
 		<li>
-			<a class="link" th:href="@{/chefs}">Esplora la nostra scelta per chef</a>
+			<a class="link" th:href="@{/chefs}" th:text="#{explore.chef}">Esplora la nostra scelta per chef</a>
 		</li>
 		<li>
-			<a class="link" th:href="@{/buffets}">Esplora la nostra scelta per buffets</a>
+			<a class="link" th:href="@{/buffets}" th:text="#{explore.buffet}">Esplora la nostra scelta per buffets</a>
 		</li>
-		<footer><a class="link" th:href="@{/index}" th:text="#{error.backhome}">Torna alla</a></footer>
+		<footer>
+		<div><a class="link" th:href="@{/welcomePageUser}" th:text="#{go.previous}">Torna alla</a></div>
+		<div><a class="link" th:href="@{/index}" th:text="#{backhome.message}">Torna alla</a></div>
+		</footer>
 </body>

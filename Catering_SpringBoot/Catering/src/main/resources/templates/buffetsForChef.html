@@ -9,7 +9,7 @@
 
 	<link href="/css/style.css" rel="stylesheet">
 	<link rel="icon" href="/images/cloche.ico" type="image/x-icon">
-	<title>Bufffet for chef</title>
+	<title>Buffet for chef</title>
 </head>
 
 <body>
@@ -20,7 +20,8 @@
 
 		<th:block th:each="buffet : ${chef.buffets}">
 			<table>
-				
+				<div id="buffet-image2"><img src="/images/fork-plate-knife.svg" width="80%">
+				</div>
 				<tr>
 					<div th:text="#{buffetname.message}+' '+${buffet.nome}">a</div>
 				</tr>
@@ -31,12 +32,16 @@
 					<div th:text="#{buffetdescription.message}+' '+${buffet.descrizione}">c</div>
 				</tr>
 				<tr>
-					<div><a class="link" th:href="@{'/dishesForBuffet' + '/' + ${buffet.id}}">Visita i piatti di questo buffet</a></div>
+					<div><a class="link" th:href="@{'/dishesForBuffet' + '/' + ${buffet.id}}">Visita i piatti di questo
+							buffet</a></div>
 				</tr>
 				<tr>_______________________________________________</tr>
 			</table>
 		</th:block>
-		<footer><a class="link" th:href="@{/index}" th:text="#{error.backhome}">Torna alla</a></footer>
+		<footer>
+			<div><a class="link" th:href="@{/chefs}" th:text="#{go.previous}">Torna alla</a></div>
+			<div><a class="link" th:href="@{/index}" th:text="#{backhome.message}">Torna alla</a></div>
+		</footer>
 	</div>
 </body>
 

@@ -12,35 +12,39 @@
 <body>
 	<div class="flex-container2">
 
-		<h4>Insert chef</h4>
+		<h2 th:text="#{insertchef}">Insert chef</h2>
 
 		<form th:action="@{/admin/insertChef}" method="POST">
-			<div>
+			<div class="input">
 				<span>Nome:</span>
 				<span><input name="name" type="text" placeholder="name" th:field="${chef.nome}" required /></span>
 				<span th:if="${#fields.hasErrors('chef.nome')}" th:errors="${credentials.username}"
 					th:style="'color:red'"></span>
 			</div>
-			<div>
+			<div class="input">
 				<span>Cognome:</span>
 				<span><input name="cognome" type="text" placeholder="cognome" th:field="${chef.cognome}"
 						required /></span>
 				<span th:if="${#fields.hasErrors('chef.cognome')}" th:errors="${credentials.username}"
 					th:style="'color:red'"></span>
 			</div>
-			<div>
+			<div class="input">
 				<span>Nazionalita':</span>
 				<span><input name="nazionalita" type="text" placeholder="nazionalita" th:field="${chef.nazionalita}"
 						required /></span>
 				<span th:if="${#fields.hasErrors('chef.nazionalita')}" th:errors="${credentials.username}"
 					th:style="'color:red'"></span>
 			</div>
-			<div>
+			<div class="button">
 				<span><button type="submit">Insert chef</button></span>
 			</div>
 		</form>
+		<footer>
+			<div><a class="link" th:href="@{/welcomePageAdmin}" th:text="#{go.previous}">Torna alla</a></div>
+			<div><a class="link" th:href="@{/index}" th:text="#{backhome.message}">Torna alla</a></div>
+		</footer>
 	</div>
-	<footer><a class="link" th:href="@{/index}" th:text="#{error.backhome}">Torna alla</a></footer>
+
 </body>
 
 </html>

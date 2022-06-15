@@ -10,33 +10,36 @@
 <body>
 	<div class="flex-container2">
 
-		<h4>Insert ingredient</h4>
+		<h2 th:text="#{insertingredient}">Insert ingredient</h2>
 
 		<form th:action="@{/admin/insertIngredient}" method="POST">
-			<div>
+			<div class="input">
 				<span>Nome:</span>
 				<span><input name="name" type="text" placeholder="name" th:field="${ingrediente.nome}" required /></span>
 				<span th:if="${#fields.hasErrors('ingrediente.nome')}" th:errors="${credentials.username}"
 					th:style="'color:red'"></span>
 			</div>
-			<div>
+			<div class="input">
 				<span>Origine:</span>
 				<span><input name="origine" type="text" placeholder="origine" th:field="${ingrediente.origine}"
 						required /></span>
 				<span th:if="${#fields.hasErrors('ingrediente.origine')}" th:errors="${credentials.username}"
 					th:style="'color:red'"></span>
 			</div>
-			<div>
+			<div class="input">
 				<span>Descrizione:</span>
 				<span><input name="descrizione" type="text" placeholder="descrizione" th:field="${ingrediente.descrizione}"
 						required /></span>
 				<span th:if="${#fields.hasErrors('ingrediente.origine')}" th:errors="${credentials.username}"
 					th:style="'color:red'"></span>
 			</div>
-			<div>
+			<div class="button">
 				<span><button type="submit" th:text="#{ingredient.insert.message}">Insert ingredient</button></span>
 			</div>
 		</form>
+		<footer>
+		<div><a class="link" th:href="@{/welcomePageAdmin}" th:text="#{go.previous}">Torna alla</a></div>
+		<div><a class="link" th:href="@{/index}" th:text="#{backhome.message}">Torna alla</a></div>
+	</footer>
 	</div>
-	<footer><a class="link" th:href="@{/index}" th:text="#{error.backhome}">Torna alla</a></footer>
 </body>

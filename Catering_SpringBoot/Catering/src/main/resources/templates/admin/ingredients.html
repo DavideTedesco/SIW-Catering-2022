@@ -21,18 +21,21 @@
 					No ingredients available
 				</tr>-->
 				<tr>
-					<div th:text="#{ingredientename.message}+' '+${ingrediente.nome}">a</div>
+					<div th:text="#{ingredientename.message}+' '+${ingrediente.nome}"></div>
 				</tr>
 				<tr>
-					<div tth:text="#{ingredientorigin.message}+' '+${ingrediente.origine}">c</div>
+					<div th:text="#{ingredienteorigin.message}+' '+${ingrediente.origine}"></div>
 				</tr>
 				<tr>
-					<div th:text="#{ingredientdescription.message}+' '+${ingrediente.descrizione}">c</div>
+					<div th:text="#{ingredientedescription.message}+' '+${ingrediente.descrizione}"></div>
 				</tr>
 				<tr>_______________________________________________</tr>
 			</table>
 		</th:block>
-		<footer><a class="link" th:href="@{/index}" th:text="#{error.backhome}">Torna alla</a></footer>
+		<footer id="title">
+			<div><a class="link" th:href="@{/welcomePageAdmin}" th:text="#{go.previous}">Torna alla</a></div>
+			<div><a class="link" th:href="@{/index}" th:text="#{backhome.message}">Torna alla</a></div>
+		</footer>
 	</div>
 </body>
 

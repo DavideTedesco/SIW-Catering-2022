@@ -12,19 +12,28 @@
 	<div class="flex-container2">
 		<div id="welcome-page">
 			<h1 th:text="#{welcome}+' '+${user.nome}"></h1>
-			 <div id="avatar-image"><img
+			<div id="avatar-image"><img
 					th:src="@{${'https://avatars.dicebear.com/v2/croodles/:'+ credentials.username + '.svg'}}"></div>
 			<h2>Realizza una modifica</h2>
 			  <div><a class="link" th:href="@{admin/insertChef}">Inserisci uno chef</a></div>
 			  <div><a class="link" th:href="@{admin/insertIngredient}">Inserisci un ingrediente</a></div>
 			  <div><a class="link" th:href="@{admin/chefs}">Rimuovi o modifica uno chef</a></div>
+			<br>
+			<br>
+			<h2>Consulta alcuni elementi già inseriti</h2>
 			  <div><a class="link" th:href="@{admin/ingredients}">Lista degli ingredienti</a></div>
-			<!--<div><a class="link" th:href="@{admin/editBuffet}">Modifica un buffet esistente</a></div>-->			  
-			  <!--<div><a class="link" th:href="@{admin/explore}">Explore</a></div>-->
-			  <div><a class="link" th:href="@{admin/allUsers}">Visualizza la lista di tutti gli utenti</a></div>
-			  <div><a class="link" th:href="@{/logout}">Log out</a></div>
+			<br>
+			<div><a class="link" th:href="@{admin/allUsers}">Visualizza la lista di tutti gli utenti</a></div>
+			 
+			<div>______________________</div>
+
 		</div>
-			<footer><a class="link" th:href="@{/index}" th:text="#{error.backhome}">Torna alla pagina prec</a></footer>
+		<footer>
+			<div><a class="link" th:href="@{/logout}">Log out</a></div>
+			<div><a class="link" th:href="@{/index}" th:text="#{backhome.message}">Torna alla</a></div>
+		</footer>
+		<br>
+
 	</div>
 
 </body>

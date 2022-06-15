@@ -14,10 +14,10 @@
 			<h1 th:text="#{welcome}+' '+${user.nome}"></h1>
 			    <div id="avatar-image"><img
 					th:src="@{${'https://avatars.dicebear.com/v2/croodles/:'+ credentials.username + '.svg'}}"></div>
-			<div><a class="link" th:href="@{/explore}">Explore</a></div>
+			<div><a class="link" th:href="@{/explore}" th:text="#{explore}">Explore</a></div>
 			  <a class="link" th:href="@{/logout}">Log out</a>
 		</div>
-		<footer><a class="link" th:href="@{/index}" th:text="#{error.backhome}">Torna alla</a></footer>
+		<footer><a class="link" th:href="@{/index}" th:text="#{backhome.message}">Torna alla</a></footer>
 	</div>
 </body>
 </html>

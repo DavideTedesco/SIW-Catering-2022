@@ -12,8 +12,8 @@
 	<groupId>it.uniroma3.siw.catering</groupId>
 	<artifactId>Catering</artifactId>
 	<version>0.0.1</version>
-	<name>Catering</name>
-	<description>Demo project for Spring Boot</description>
+	<name>Very Important Catering</name>
+	<description>A web information system that manages a catering service.</description>
 	<properties>
 		<java.version>1.8</java.version>
 	</properties>

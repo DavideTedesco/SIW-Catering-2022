@@ -13,8 +13,8 @@
 </head>
 
 <body>
-	<div class="flex-container-list">
-		<h2 th:text="#{dishesslist.name}">lista dei piatti</h2>
+	<div class="flex-container-dishes">
+		<h2 th:text="#{disheslist.name}">lista dei piatti</h2>
 
 		<th:block th:each="piatto : ${buffet.piatti}">
 
@@ -32,7 +32,10 @@
 				<tr>_______________________________________________</tr>
 			</table>
 		</th:block>
-		<footer><a class="link" th:href="@{/index}" th:text="#{error.backhome}">Torna alla</a></footer>
+		<footer>
+			<div><a class="link" th:href="@{/welcomePageUser}" th:text="#{go.welcomePage}">Torna alla</a></div>
+			<div><a class="link" th:href="@{/index}" th:text="#{backhome.message}">Torna alla</a></div>
+		</footer>
 	</div>
 </body>
 

@@ -7,14 +7,38 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<link href="/css/style.css" rel="stylesheet">
+	<link href="/css/users.css" rel="stylesheet">
 	<link rel="icon" href="/images/cloche.ico" type="image/x-icon">
 	<title>Chefs list</title>
 </head>
 
 <body>
-<h1>Lista degli utenti</h1>
-	<div class="grid-container" th:each="user : ${users}">
-		<div class="grid-item" th:text="${user.nome} +' ' +${user.cognome} + ' '+${user.id}">mimmo</div>
+	<div id="table-container">
+
+		<h1 id="title">Lista degli utenti</h1>
+		<table id="tabella">
+			<thead>
+				<th>
+					nome
+				</th>
+				<th>
+					cognome
+				</th>
+				<th>
+					id
+				</th>
+			</thead>
+			<tbody>
+				<tr th:each="user : ${users}">
+					<td th:text="${user.nome}">mimmo</td>
+					<td th:text="${user.cognome}">mimmo</td>
+					<td th:text="${user.id}">mimmo</td>
+				</tr>
+			</tbody>
+		</table>
+		<footer id="title">
+			<div><a class="link" th:href="@{/welcomePageAdmin}" th:text="#{go.previous}">Torna alla</a></div>
+			<div><a class="link" th:href="@{/index}" th:text="#{backhome.message}">Torna alla</a></div>
+		</footer>
 	</div>
 </body>
