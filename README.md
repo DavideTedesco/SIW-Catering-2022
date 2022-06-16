@@ -12,10 +12,11 @@ Repository of the Exam project for the realisation of a Spring Boot Application 
 </div>
 
 ## Technologies Used
-
+- HTML
+- CSS
 - Java
-- Spring Boot
 - Maven
+- Spring Boot
 - Heroku
 
 ## The app deployed
@@ -34,5 +35,10 @@ Repository of the Exam project for the realisation of a Spring Boot Application 
 - show all Registered Users
 
 ### User use cases
-- explore the selection by Buffets
 - explore the selection by Chefs
+  - Buffets of the chef
+    - Dishes of the buffet
+      - Ingredients of a dish
+- explore the selection by Buffets
+  - Dishes of the buffet
+    - Ingredients of the dish
