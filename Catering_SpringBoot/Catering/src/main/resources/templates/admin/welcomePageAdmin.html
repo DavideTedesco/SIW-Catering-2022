@@ -9,7 +9,7 @@
 </head>
 
 <body>
-	<div class="flex-container2">
+	<div class="flex-container-list-welcome">
 		<div id="welcome-page">
 			<h1 th:text="#{welcome}+' '+${user.nome}"></h1>
 			<div id="avatar-image"><img
@@ -21,6 +21,8 @@
 			<br>
 			<br>
 			<h2>Consulta alcuni elementi già inseriti</h2>
+			  <div><a class="link" th:href="@{admin/buffets}">Lista dei buffet</a></div>
+			  <div><a class="link" th:href="@{admin/dishes}">Lista dei piatti</a></div>
 			  <div><a class="link" th:href="@{admin/ingredients}">Lista degli ingredienti</a></div>
 			<br>
 			<div><a class="link" th:href="@{admin/allUsers}">Visualizza la lista di tutti gli utenti</a></div>

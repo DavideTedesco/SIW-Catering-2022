@@ -20,7 +20,8 @@ public class UserService {
 	public User save(User user) {
 		return userRepo.save(user);
 	}
-		
+	
+	@Transactional
 	public List<User> getAllUsers(){
 		return (List<User>) userRepo.findAll();
 	}

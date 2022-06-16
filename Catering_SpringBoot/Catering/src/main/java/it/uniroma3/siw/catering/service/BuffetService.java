@@ -31,12 +31,8 @@ public class BuffetService {
 	public List<Buffet> buffetPerCategoria(String Categoria){
 		return buffetRepository.findByCategoria(Categoria);
 	}
-	
-//	@Transactional
-//	public List<Buffet> buffetPerChef(Chef chef){
-//		return buffetRepository.ﬁndByChefId(chef);
-//	}
 
+	@Transactional
 	public void deleteById(Long id) {
 		buffetRepository.deleteById(id);
 	}

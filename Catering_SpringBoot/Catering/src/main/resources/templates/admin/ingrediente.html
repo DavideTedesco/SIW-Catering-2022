@@ -8,17 +8,24 @@
 </head>
 
 <body>
-	    <div>
-		    <h4 th:text="#{ingredientdetails.message}">Dettagli dell'ingrediente inserito:</h4>
+	    <div class="flex-container2">
+		    <h1 th:text="#{ingredientdetails.message}">Dettagli dell'ingrediente inserito:</h1>
+		<div id="ingredient-image2"><img
+				th:src="@{${'https://picsum.photos/seed/'+ingrediente.nome+ingrediente.origine+ingrediente.descrizione+'/100'}}">
+		</div>
 		<ul class="list">
-			<li><span th:text="#{ingredientname.message}+' '+${ingrediente.nome}">sale</span></li>
-			<li><span th:text="#{ingredientorigin.message}+' '+${ingrediente.origine}">Rossi</span></li>
-			<li><span th:text="#{ingredientdescription.message}+' '+${ingrediente.descrizione}">a b c</span></li>	  
+			<li><span th:text="#{ingredientename.message}+' '+${ingrediente.nome}">sale</span></li>
+			<li><span th:text="#{ingredienteorigin.message}+' '+${ingrediente.origine}">Rossi</span></li>
+			<li><span th:text="#{ingredientedescription.message}+' '+${ingrediente.descrizione}">a b c</span></li>   
 		</ul>
 		   
-		<div><a class="link" th:href="@{/admin/ingredients}" th:text="#{ingredientlist.message}">Lista degli ingredienti</a></div>
+		<div><a class="link" th:href="@{/admin/ingredients}" th:text="#{ingredientlist.name}">Lista degli
+				ingredienti</a></div>
+		<div><a class="link" th:href="@{/welcomePageAdmin}" th:text="#{go.welcomePage}">Torna alla</a></div>
+		    <div>
+			<footer><a class="link" th:href="@{/index}" th:text="#{backhome.message}">Torna alla</a></footer>
+		</div>
 	</div>
-	    <footer><a class="link" th:href="@{/index}" th:text="#{error.backhome}">Torna alla</a></footer>
 </body>
 
 </html>

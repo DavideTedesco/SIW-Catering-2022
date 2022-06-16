@@ -9,29 +9,24 @@
 
 	<link href="/css/style.css" rel="stylesheet">
 	<link rel="icon" href="/images/cloche.ico" type="image/x-icon">
-	<title>Explore</title>
+	<title>Dishes list</title>
 </head>
 
 <body>
-	<div class="flex-container-list-ingredients">
-		<h2 th:text="#{ingredientlist.name}">lista ingredienti</h2>
-		<th:block th:each="ingrediente : ${ingredientes}">
-			<div id="ingredient-image"><img
-					th:src="@{${'https://picsum.photos/seed/'+ingrediente.nome+ingrediente.origine+ingrediente.descrizione+'/100'}}">
-			</div>
+	<div class="flex-container-list-dishes">
+		<h2 th:text="#{disheslist.name}">lista piatti</h2>
+		<th:block th:each="piatto : ${piatti}">
 			<table>
-				<!--<tr th:if="${ingredientes.empty}">
-					No ingredients available
-				</tr>-->
+				
+				<div id="dish-image"><img src="/images/dish-plate.svg" width="50%">
+				</div>
 				<tr>
-					<div th:text="#{ingredientename.message}+' '+${ingrediente.nome}"></div>
+					<div th:text="#{dishname.message}+' '+${piatto.nome}">nome piatto</div>
 				</tr>
 				<tr>
-					<div th:text="#{ingredienteorigin.message}+' '+${ingrediente.origine}"></div>
+					<div th:text="#{dishdescription.message}+' '+${piatto.descrizione}">descrizione piatto</div>
 				</tr>
-				<tr>
-					<div th:text="#{ingredientedescription.message}+' '+${ingrediente.descrizione}"></div>
-				</tr>
+				
 				<tr>_______________________________________________</tr>
 			</table>
 		</th:block>

@@ -26,6 +26,7 @@ public class IngredienteService {
 		return (List<Ingrediente>)ingredienteRepository.findAll();
 	}
 
+	@Transactional
 	public Ingrediente findById(Long id) {
 		return ingredienteRepository.findById(id).get();
 	}

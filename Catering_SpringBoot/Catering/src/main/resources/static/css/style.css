@@ -42,6 +42,13 @@ body {
   align-items: center;
 }
 
+.flex-container-list-welcome{
+  position: absolute;
+  text-align: center;
+  align-items: center;
+  margin-left: 35%;
+}
+
 .flex-container2 {
   display: flex;
   flex-direction: column;
@@ -82,6 +89,12 @@ body {
   margin-left: 3%;
 }
 
+.flex-container-list-dishes{
+  position: absolute;
+  text-align: center;
+  align-items: center;
+  margin-left: 32%;
+}
 .input{
 	display: flex;
     justify-content: space-between;
@@ -164,6 +177,23 @@ section {
     padding-left: 25%;
 }
 
+#avatar-image2{
+	width: 50%;
+    image-rendering:smooth;
+}
+#ingredient-image{
+	width: 50%;
+    image-rendering:smooth;
+    padding-left: 25%;
+    border-radius: 10%;
+}
+
+#ingredient-image2{
+	width: 50%;
+    image-rendering:smooth;
+    border-radius: 10%;
+}
+
 #buffet-image{
 	width: 50%;
     image-rendering:smooth;
@@ -173,6 +203,12 @@ section {
 #buffet-image2{
 	width: 50%;
     image-rendering:smooth;
+}
+
+#dish-image{
+	width: 50%;
+    image-rendering:smooth;
+    padding-left: 25%
 }
 
 #title-au{

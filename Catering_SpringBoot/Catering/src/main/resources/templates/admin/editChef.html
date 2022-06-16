@@ -4,41 +4,47 @@
 <head>
 	<meta charset="UTF-8" />
 	<link href="/css/style.css" rel="stylesheet">
-	<title>Modifica di uno chef</title>
+	<title>Edit of a chef</title>
 </head>
 
 <body>
 	 <div class="flex-container2">
 
-		<h4>Edit chef</h4>
+		<h1>Edit chef</h1>
 
 		<form th:action="@{'/admin' + '/' +'editChef' + '/' + ${chef.id}}" method="POST">
-			<div>
+			<div class="input">
 				<span>Nome:</span>
 				<span><input name="nome" type="text" placeholder="name" th:field="${chef.nome}" th:value="${chef.nome}"
 						required /></span>
 				<span th:if="${#fields.hasErrors('chef.nome')}" th:errors="${credentials.username}"
 					th:style="'color:red'"></span>
 			</div>
-			<div>
+			<div class="input">
 				<span>Cognome:</span>
 				<span><input name="cognome" type="text" placeholder="cognome" th:field="${chef.cognome}"
 						th:value="${chef.cognome}" required /></span>
 				<span th:if="${#fields.hasErrors('chef.cognome')}" th:errors="${credentials.username}"
 					th:style="'color:red'"></span>
 			</div>
-			<div>
+			<div class="input">
 				<span>Nazionalita':</span>
 				<span><input name="nazionalita" type="text" placeholder="nazionalita" th:field="${chef.nazionalita}"
 						th:value="${chef.nazionalita}" required /></span>
 				<span th:if="${#fields.hasErrors('chef.nazionalita')}" th:errors="${credentials.username}"
 					th:style="'color:red'"></span>
 			</div>
-			<div>
+			<div class="button">
 				<span><button type="submit">Confirm the edit of the chef</button></span>
 			</div>
 		</form>
-		<footer><a class="link" th:href="@{/index}" th:text="#{error.backhome}">Torna alla</a></footer>
+		<footer>
+			<div><a class="link" th:href="@{/admin/chefs}" th:text="#{cheflist.message}">Lista degli chef</a></div>
+			<div><a class="link" th:href="@{/welcomePageAdmin}" th:text="#{go.welcomePage}">Torna alla</a></div>
+			    <div>
+				<a class="link" th:href="@{/index}" th:text="#{backhome.message}">Torna alla</a>
+			</div>
+		</footer>
 	</div>
 </body>
 </html>

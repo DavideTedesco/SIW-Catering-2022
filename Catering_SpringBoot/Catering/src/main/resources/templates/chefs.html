@@ -14,7 +14,7 @@
 
 <body>
 	<div class="flex-container-chef">
-		<h2 th:text="#{header.chefs}">lista chef</h2>
+		<h1 th:text="#{header.chefs}">lista chef</h1>
 		<th:block th:each="chef : ${chefs}">
 			<div id="avatar-image"><img
 					th:src="@{${'https://avatars.dicebear.com/v2/croodles/:'+ chef.nome + chef.cognome +chef.nazionalita + '.svg'}}">

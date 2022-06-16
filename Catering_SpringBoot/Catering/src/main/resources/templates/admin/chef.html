@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8" />
+	<link href="/css/style.css" rel="stylesheet">
+	<title>Dettagli dello chef</title>
+</head>
+
+<body>
+	<div class="flex-container2">
+		    <h1>Dettagli dello chef da te inserito:</h1>
+		<div id="avatar-image2"><img
+					th:src="@{${'https://avatars.dicebear.com/v2/croodles/:'+ chef.nome + chef.cognome +chef.nazionalita + '.svg'}}">
+			</div>
+		<ul class="list">
+			<li><span th:text="#{chefname.message}+' '+${chef.nome}">Paolo</span></li>
+			<li><span th:text="#{chefsurname.message}+' '+${chef.cognome}">Rossi</span></li>
+			<li><span th:text="#{chefnationality.message}+' '+${chef.nazionalita}">neozelandese</span></li>   
+		</ul>
+		   
+		<footer>
+			<div><a class="link" th:href="@{/admin/chefs}" th:text="#{cheflist.message}">Lista degli chef</a></div>
+			<div><a class="link" th:href="@{/welcomePageAdmin}" th:text="#{go.welcomePage}">Torna alla</a></div>
+			    <div>
+				<a class="link" th:href="@{/index}" th:text="#{backhome.message}">Torna alla</a>
+			</div>
+		</footer>
+	</div>
+</body>
+
+</html>

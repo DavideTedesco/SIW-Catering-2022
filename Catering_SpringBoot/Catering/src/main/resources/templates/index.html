@@ -56,19 +56,27 @@
 				</li>
 			</ul>
 		</div>
-		<h2>Contacts</h2>
+		<h2 th:text="#{index.contacts}">Contacts</h2>
 		<ul class="list">
 			<li>
 				<a class="link" href="mailto:info@veryimportantcatering.com">info@veryimportantcatering.com</a>
 			</li>
 			<li>
-				<div>0039 0884 519618</div>
+				<div>
+				<span th:text="#{index.phone}">Telefono:</span>
+				<span>0039 0884 519618</span></div>
 			</li>
 			<li>
-				<div>Via degli strozzapreti, 42, Manfredonia, Italia, 71043</div>
+				<div>
+				<span th:text="#{index.address}">Indirizzo:</span>
+				<span>Via degli strozzapreti, 42, Manfredonia, Italia, 71043</span>
+				</div>
 			</li>
 			<li>
-				<div>Partita IVA 87215130962 </div>
+				<div>
+				<span th:text="#{index.vatid}">Partita IVA:</span>
+				<span>87215130962</span>
+				</div>
 			</li>
 		</ul>
 	</div>

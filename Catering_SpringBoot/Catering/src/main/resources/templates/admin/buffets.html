@@ -13,49 +13,38 @@
 </head>
 
 <body>
-
-	<div class="flex-container-list">
-		<h1 th:text="#{buffetslist.name}">lista buffet</h1>
+	<div class="flex-container-chef">
+		<h2 th:text="#{buffetslist.name}">lista buffet</h2>
 		<th:block th:each="buffet : ${buffets}">
 			<table>
-				<!--<tr th:if="${buffets.empty}">
-					No buffets available
-				</tr>-->
+				
 				<div id="buffet-image"><img src="/images/fork-plate-knife.svg" width="80%">
 				</div>
 				<tr>
-					<div th:text="#{chefname.message}+' '+${buffet.chef.nome}">b</div>
+					<div th:text="#{chefname.message}+' '+${buffet.chef.nome}">nome chef</div>
 				</tr>
 				<tr>
-					<div th:text="#{chefsurname.message}+' '+${buffet.chef.cognome}">b</div>
+					<div th:text="#{chefsurname.message}+' '+${buffet.chef.cognome}">cognome chef</div>
 				</tr>
 				<tr>
-					<div th:text="#{buffetname.message}+' '+${buffet.nome}">a</div>
+					<div th:text="#{buffetname.message}+' '+${buffet.nome}"></div>
 				</tr>
 				<tr>
-					<div th:text="#{buffetcategory.message}+' '+${buffet.categoria}">c</div>
+					<div th:text="#{buffetcategory.message}+' '+${buffet.categoria}"></div>
 				</tr>
 				<tr>
-					<div th:text="#{buffetdescription.message}+' '+${buffet.descrizione}">c</div>
+					<div th:text="#{buffetdescription.message}+' '+${buffet.descrizione}"></div>
 				</tr>
 				<tr>
-					<div>
-						<a class="link" th:href="@{'/admin' + '/' +'removeBuffet' + '/' + ${buffet.id}}">
-							Rimuovi</a>
-					</div>
+					<div><a class="link" th:href="@{'dishesForBuffet' + '/' + ${buffet.id}}">Visita i piatti di questo buffet</a></div>
 				</tr>
-				<tr>
-					<div>
-						<a class="link" th:href="@{'/admin' + '/' +'editBuffet' + '/' + ${buffet.id}}"> Modifica</a>
-					</div>
-				</tr>
-				<tr>
-					<div>_______________________________________________</div>
-				</tr>
+				<tr>_______________________________________________</tr>
 			</table>
 		</th:block>
-		<footer><a class="link" th:href="@{/index}" th:text="#{error.backhome}">Torna alla</a></footer>
-
+		<footer id="title">
+			<div><a class="link" th:href="@{/welcomePageAdmin}" th:text="#{go.previous}">Torna alla</a></div>
+			<div><a class="link" th:href="@{/index}" th:text="#{backhome.message}">Torna alla</a></div>
+		</footer>
 	</div>
 </body>
 

@@ -1,5 +1,7 @@
 package it.uniroma3.siw.catering.service;
 
+import java.util.List;
+
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,8 +22,14 @@ public class PiattoService {
 		return piattoRepository.save(piatto);
 	}
 	
+	@Transactional
 	public Piatto findById(Long id) {
 		return piattoRepository.findById(id).get();
+	}
+
+	@Transactional
+	public List<Piatto> getAllDishes() {
+		return (List<Piatto>)piattoRepository.findAll();
 	}
 	
 }

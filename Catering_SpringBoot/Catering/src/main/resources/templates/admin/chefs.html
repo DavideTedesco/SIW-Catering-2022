@@ -16,7 +16,6 @@
 	<div class="flex-container-chef">
 		<div>
 			<h2 th:text="#{header.chefs}">lista chef</h2>
-			<div><a class="link" th:href="@{/admin/explore}" th:text="#{go.previous}">Torna alla</a></div>
 			<th:block th:each="chef : ${chefs}">
 				<div id="avatar-image"><img
 						th:src="@{${'https://avatars.dicebear.com/v2/croodles/:'+ chef.nome + chef.cognome +chef.nazionalita + '.svg'}}">
@@ -34,7 +33,7 @@
 						</tr>
 						<tr>
 							<div>
-								<a class="link" th:href="@{'/admin' + '/' +'removeChef' + '/' + ${chef.id}}" th:text="#{remove}">
+								<a class="link" th:href="@{'/admin' + '/' +'toRemoveChef' + '/' + ${chef.id}}" th:text="#{remove}">
 									Rimuovi</a>
 							</div>
 						</tr>

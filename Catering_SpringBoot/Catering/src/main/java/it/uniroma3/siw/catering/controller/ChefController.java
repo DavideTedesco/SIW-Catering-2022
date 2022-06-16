@@ -47,8 +47,15 @@ public class ChefController {
 		return "admin/chefs";
 	}
 
-	@GetMapping("/admin/removeChef/{id}")
-	public String removeChef(@PathVariable("id") Long id ,Model model) {
+	@GetMapping("/admin/toRemoveChef/{id}")
+	public String toRemoveChef(@PathVariable("id") Long id ,Model model) {
+		model.addAttribute("chef", chefService.findById(id));
+		return "admin/confirmChefDeletion";
+	}
+	
+	@GetMapping("/admin/deleteChef/{id}")
+	public String deleteChef(@PathVariable("id") Long id ,Model model) {
+		
 		chefService.deleteById(id);
 		model.addAttribute("chefs", chefService.getAllChefs());
 		return "admin/chefs";
@@ -68,8 +75,8 @@ public class ChefController {
 		if(!chefBindingResult.hasErrors()) {
 			model.addAttribute("chef", chef);		
 			chefService.save(chef);
-			return "chef";
-			//return "admin/confirmInsertChef";
+			return "admin/chef";
+			
 		}
 		return "admin/insertChef";
 	}

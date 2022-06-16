@@ -20,20 +20,18 @@ Repository of the Exam project for the realisation of a Spring Boot Application 
 
 ## The app deployed
 
-[See the app here!](https://siw-catering-2022.herokuapp.com/)
+[See the deployed app here!](https://siw-catering-2022.herokuapp.com/)
 
 ## Use cases
 
 ### Admin use cases
 - insert a new Chef
-- show Chefs
-- show Buffets
-- show Dishes
-- show Ingredients
-- edit an Ingredient
+- insert a new Ingredient
+- show all chefs, remove or edit a Chef
+- show all Buffets
+- show all Dishes
+- show all Ingredients
 
 ### User use cases
-- show Buffets
-- show Chefs
-- show Dishes
-- show Ingredients
+- explore the selection by Buffets
+- explore the selection by Chefs
