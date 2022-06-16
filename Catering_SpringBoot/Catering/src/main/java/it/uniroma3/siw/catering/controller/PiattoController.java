@@ -8,7 +8,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
-import it.uniroma3.siw.catering.model.Chef;
 import it.uniroma3.siw.catering.model.Piatto;
 import it.uniroma3.siw.catering.service.BuffetService;
 import it.uniroma3.siw.catering.service.PiattoService;

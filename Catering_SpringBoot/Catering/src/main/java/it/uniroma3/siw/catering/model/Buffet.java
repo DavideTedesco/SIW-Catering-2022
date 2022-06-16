@@ -12,7 +12,6 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.validation.constraints.NotBlank;
 
-
 @Entity
 public class Buffet {
 	
@@ -22,8 +21,10 @@ public class Buffet {
 	
 	@NotBlank
 	private String nome;
+	
 	@NotBlank
 	private String categoria;
+	
 	@NotBlank
 	private String descrizione;
 	
@@ -80,7 +81,5 @@ public class Buffet {
 	public void setChef(Chef chef) {
 		this.chef = chef;
 	}
-	
-	
-	
+
 }

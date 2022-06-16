@@ -9,6 +9,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.validation.constraints.NotBlank;
 
 @Entity
 public class Chef {
@@ -17,10 +18,13 @@ public class Chef {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	
+	@NotBlank
 	private String nome;
 	
+	@NotBlank
 	private String cognome;
 	
+	@NotBlank
 	private String nazionalita;
 	
 	@OneToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE}, fetch = FetchType.EAGER)
@@ -65,6 +69,5 @@ public class Chef {
 	public void setBuffets(List<Buffet> buffets) {
 		this.buffets = buffets;
 	}
-	
-	
+
 }

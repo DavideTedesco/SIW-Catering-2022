@@ -9,7 +9,7 @@
 
 	<link href="/css/users.css" rel="stylesheet">
 	<link rel="icon" href="/images/cloche.ico" type="image/x-icon">
-	<title>Chefs list</title>
+	<title>Users list</title>
 </head>
 
 <body>
@@ -18,10 +18,10 @@
 		<h1 id="title">Lista degli utenti</h1>
 		<table id="tabella">
 			<thead>
-				<th>
+				<th th:text="#{nome.message}">
 					nome
 				</th>
-				<th>
+				<th th:text="#{cognome.message}">
 					cognome
 				</th>
 				<th>

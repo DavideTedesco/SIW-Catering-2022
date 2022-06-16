@@ -6,9 +6,10 @@
 	<title>Buffet editing</title>
 </head>
 <body>
+<!--PAGINA NON UTILIZZATA-->
 	 <div class="flex-container2">
 
-		<h4>Edit chef</h4>
+		<h4 >Edit buffet</h4>
 
 		<form th:action="@{'/admin' + '/' +'editBuffet' + '/' + ${buffet.id}}" method="POST">
 			<div>
@@ -33,7 +34,7 @@
 					th:style="'color:red'"></span>
 			</div>
 			<div>
-				<span><button type="submit">Confirm the edit of the chef</button></span>
+				<span><button type="submit" th:text="#{confirm.editchef.message}">Confirm the edit of the chef</button></span>
 			</div>
 		</form>
 		<footer><a class="link" th:href="@{/index}" th:text="#{error.backhome}">Torna alla</a></footer>

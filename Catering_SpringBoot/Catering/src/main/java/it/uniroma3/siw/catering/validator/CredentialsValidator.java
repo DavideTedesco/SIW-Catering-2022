@@ -8,9 +8,7 @@ import org.springframework.validation.Validator;
 import it.uniroma3.siw.catering.model.Credentials;
 import it.uniroma3.siw.catering.model.User;
 import it.uniroma3.siw.catering.service.CredentialsService;
-/**
- * Validator for Credentials
- */
+
 @Component
 public class CredentialsValidator implements Validator {
 

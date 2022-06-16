@@ -9,12 +9,12 @@
 
 	<link href="/css/style.css" rel="stylesheet">
 	<link rel="icon" href="/images/cloche.ico" type="image/x-icon">
-	<title>Explore</title>
+	<title>Buffets list</title>
 </head>
 
 <body>
 	<div class="flex-container-chef">
-		<h2 th:text="#{buffetslist.name}">lista buffet</h2>
+		<h1 th:text="#{buffetslist.name}">lista buffet</h1>
 		<th:block th:each="buffet : ${buffets}">
 			<table>
 				
@@ -34,9 +34,6 @@
 				</tr>
 				<tr>
 					<div th:text="#{buffetdescription.message}+' '+${buffet.descrizione}"></div>
-				</tr>
-				<tr>
-					<div><a class="link" th:href="@{'dishesForBuffet' + '/' + ${buffet.id}}">Visita i piatti di questo buffet</a></div>
 				</tr>
 				<tr>_______________________________________________</tr>
 			</table>

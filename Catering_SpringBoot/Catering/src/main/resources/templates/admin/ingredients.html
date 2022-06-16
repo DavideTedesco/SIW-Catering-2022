@@ -9,36 +9,44 @@
 
 	<link href="/css/style.css" rel="stylesheet">
 	<link rel="icon" href="/images/cloche.ico" type="image/x-icon">
-	<title>Explore</title>
+	<title>Ingredients</title>
 </head>
 
 <body>
 	<div class="flex-container-list-ingredients">
-		<h2 th:text="#{ingredientlist.name}">lista ingredienti</h2>
-		<th:block th:each="ingrediente : ${ingredientes}">
-			<div id="ingredient-image"><img
-					th:src="@{${'https://picsum.photos/seed/'+ingrediente.nome+ingrediente.origine+ingrediente.descrizione+'/100'}}">
-			</div>
-			<table>
-				<!--<tr th:if="${ingredientes.empty}">
+		<div>
+			<h1 th:text="#{ingredientslist.name}">lista ingredienti</h1>
+			<th:block th:each="ingrediente : ${ingredientes}">
+				<div id="ingredient-image"><img
+						th:src="@{${'https://picsum.photos/seed/'+ingrediente.nome+ingrediente.origine+ingrediente.descrizione+'/100'}}">
+				</div>
+				<!--<div id="ingredient-image2">
+					<img src="/images/ingredient.png" width="20%">
+					   
+				</div>-->
+				<table>
+					<!--<tr th:if="${ingredientes.empty}">
 					No ingredients available
 				</tr>-->
-				<tr>
-					<div th:text="#{ingredientename.message}+' '+${ingrediente.nome}"></div>
-				</tr>
-				<tr>
-					<div th:text="#{ingredienteorigin.message}+' '+${ingrediente.origine}"></div>
-				</tr>
-				<tr>
-					<div th:text="#{ingredientedescription.message}+' '+${ingrediente.descrizione}"></div>
-				</tr>
-				<tr>_______________________________________________</tr>
-			</table>
-		</th:block>
+					<tr>
+						<div th:text="#{ingredientename.message}+' '+${ingrediente.nome}"></div>
+					</tr>
+					<tr>
+						<div th:text="#{ingredienteorigin.message}+' '+${ingrediente.origine}"></div>
+					</tr>
+					<tr>
+						<div th:text="#{ingredientedescription.message}+' '+${ingrediente.descrizione}"></div>
+					</tr>
+					<tr>_______________________________________________</tr>
+				</table>
+			</th:block>
+		</div>
+
 		<footer id="title">
 			<div><a class="link" th:href="@{/welcomePageAdmin}" th:text="#{go.previous}">Torna alla</a></div>
 			<div><a class="link" th:href="@{/index}" th:text="#{backhome.message}">Torna alla</a></div>
 		</footer>
+
 	</div>
 </body>
 

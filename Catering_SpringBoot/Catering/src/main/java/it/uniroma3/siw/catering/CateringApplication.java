@@ -2,9 +2,6 @@ package it.uniroma3.siw.catering;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.Bean;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.crypto.password.PasswordEncoder;
 
 @SpringBootApplication
 //per escludere spring security
@@ -12,11 +9,10 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 public class CateringApplication {
 
 	public static void main(String[] args) {
-		DBslave dbslave = new DBslave();
-		//dbslave.encoderDB("password");
+		//da scommentare se si utilizza la classe DBslave
+		//DBslave dbslave = new DBslave();
+		// dbslave.encoderDB("password");
 		SpringApplication.run(CateringApplication.class, args);
 	}
 
-	
-	 
 }

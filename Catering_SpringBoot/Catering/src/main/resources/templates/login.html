@@ -7,6 +7,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="/css/style.css" rel="stylesheet">
 	<link rel="icon" href="/images/cloche.ico" type="image/x-icon">
+	<title>Login page</title>
+
 </head>
 
 <body>
@@ -19,18 +21,18 @@
 					<div class="input">
 						<span>Username:</span>
 						<span><input name="username" type="text" placeholder="username" required /></span>
-						
+
 					</div>
 					<div class="input">
 						<span>Password:</span>
 						<span><input name="password" type="password" placeholder="password" required /></span>
 					</div>
 					<div class="button">
-						<button type="submit">Login</button>
+						<button type="submit" th:text="#{index.login}">Login</button>
 					</div>
 				</div>
 			</form>
-			
+
 			<footer>
 				<div><a class="link" th:href="@{/index}" th:text="#{backhome.message}">Torna alla</a></div>
 			</footer>

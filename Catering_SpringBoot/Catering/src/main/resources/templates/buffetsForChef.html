@@ -14,7 +14,7 @@
 
 <body>
 	<div class="flex-container2">
-		<h2 th:text="#{buffetslist.name}">lista buffet</h2>
+		<h1 th:text="#{buffetslist.name}">lista buffet</h1>
 		<div th:text="#{chefname.message}+' '+${chef.nome}">b</div>
 		<div th:text="#{chefsurname.message}+' '+${chef.cognome}">b</div>
 
@@ -32,7 +32,7 @@
 					<div th:text="#{buffetdescription.message}+' '+${buffet.descrizione}">c</div>
 				</tr>
 				<tr>
-					<div><a class="link" th:href="@{'/dishesForBuffet' + '/' + ${buffet.id}}">Visita i piatti di questo
+					<div><a class="link" th:href="@{'/dishesForBuffet' + '/' + ${buffet.id}}" th:text="#{visitdishesfrombuffet}">Visita i piatti di questo
 							buffet</a></div>
 				</tr>
 				<tr>_______________________________________________</tr>

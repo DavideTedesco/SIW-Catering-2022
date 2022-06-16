@@ -15,7 +15,7 @@
 			    <div id="avatar-image"><img
 					th:src="@{${'https://avatars.dicebear.com/v2/croodles/:'+ credentials.username + '.svg'}}"></div>
 			<div><a class="link" th:href="@{/explore}" th:text="#{explore}">Explore</a></div>
-			  <a class="link" th:href="@{/logout}">Log out</a>
+			  <a class="link" th:href="@{/logout}" th:text="#{logout.message}">Log out</a>
 		</div>
 		<footer><a class="link" th:href="@{/index}" th:text="#{backhome.message}">Torna alla</a></footer>
 	</div>

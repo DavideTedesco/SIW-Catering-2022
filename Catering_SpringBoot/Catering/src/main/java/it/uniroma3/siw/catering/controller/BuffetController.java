@@ -1,6 +1,5 @@
 package it.uniroma3.siw.catering.controller;
 
-import java.util.LinkedList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,7 +9,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
 import it.uniroma3.siw.catering.model.Buffet;
-import it.uniroma3.siw.catering.model.Chef;
 import it.uniroma3.siw.catering.service.BuffetService;
 import it.uniroma3.siw.catering.service.ChefService;
 
@@ -23,39 +21,33 @@ public class BuffetController {
 	@Autowired
 	ChefService chefService;
 
-	@GetMapping({"/categories"})
+	@GetMapping({ "/categories" })
 	public String showCategories(Model model) {
 		return "categories";
 	}
 
-	@GetMapping({"/buffets"})
+	@GetMapping({ "/buffets" })
 	public String showBuffets(Model model) {
 		List<Buffet> buffets = buffetService.getAllBuffets();
-		model.addAttribute("buffets",buffets);
+		model.addAttribute("buffets", buffets);
 		return "buffets";
 	}
 
-	@GetMapping({"/chefBuffets/{id}"})
+	@GetMapping({ "/chefBuffets/{id}" })
 	public String showBuffetsForChef(@PathVariable("id") Long id, Model model) {
 		model.addAttribute("chef", chefService.findById(id));
 		return "buffetsForChef";
 	}
-	
-//	@GetMapping({"/buffetsForChef"})
-//	public String showSingleBuffet(Model model) {
-//		return "buffetsForChef";
-//	}
-	
 
-	@GetMapping({"/admin/buffets"})
-	public String showBuffetsAdmin(Model model) {	
+	@GetMapping({ "/admin/buffets" })
+	public String showBuffetsAdmin(Model model) {
 		List<Buffet> buffets = buffetService.getAllBuffets();
-		model.addAttribute("buffets",buffets);
+		model.addAttribute("buffets", buffets);
 		return "admin/buffets";
 	}
 
 	@GetMapping("/admin/removeBuffet/{id}")
-	public String removeBuffet(@PathVariable("id") Long id ,Model model) {
+	public String removeBuffet(@PathVariable("id") Long id, Model model) {
 		buffetService.deleteById(id);
 		model.addAttribute("buffets", buffetService.getAllBuffets());
 		return "admin/chefs";

@@ -5,17 +5,21 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotBlank;
 
 @Entity
-@Table(name = "users") // cambiamo nome perchè in postgres user e' una parola riservata
+//Cambiamo il nome della table perchè in postgres user e' una keyword
+@Table(name = "users")
 public class User {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
-	
+
+	@NotBlank
 	private String nome;
-	
+
+	@NotBlank
 	private String cognome;
 
 	public Long getId() {
@@ -41,6 +45,5 @@ public class User {
 	public void setCognome(String cognome) {
 		this.cognome = cognome;
 	}
-	
-	
+
 }

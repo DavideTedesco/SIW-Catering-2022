@@ -11,9 +11,6 @@ import it.uniroma3.siw.catering.model.Chef;
 
 public interface ChefRepository extends CrudRepository<Chef, Long> {
 	
-	//@Query("SELECT c.buffet FROM Chef c WHERE c.nome = ?")
-	//public List<Buffet >getAllChefBuffet(Chef c);
-	
 	@Query("SELECT buffets FROM Chef c WHERE c =: chef")
 	public List<Buffet>getAllChefBuffet(@Param("chef")Chef chef);
 

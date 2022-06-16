@@ -38,7 +38,8 @@
 					<div th:text="#{buffetdescription.message}+' '+${buffet.descrizione}"></div>
 				</tr>
 				<tr>
-					<div><a class="link" th:href="@{'dishesForBuffet' + '/' + ${buffet.id}}">Visita i piatti di questo buffet</a></div>
+					<div><a class="link" th:href="@{'dishesForBuffet' + '/' + ${buffet.id}}"
+							th:text="#{visitdishesfrombuffet}">Visita i piatti di questo buffet</a></div>
 				</tr>
 				<tr>_______________________________________________</tr>
 			</table>

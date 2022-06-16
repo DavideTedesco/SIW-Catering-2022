@@ -5,7 +5,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 public class DBslave {
-
+	//CLASS USEFUL TO ENCRYPT PASSWORDS FOR DB MANUAL INSERTION
 	@Bean
 	static
 	PasswordEncoder passwordEncoderProva() {

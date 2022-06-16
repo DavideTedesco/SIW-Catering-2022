@@ -4,7 +4,7 @@
 <head>
 	<meta charset="UTF-8" />
 	<link href="/css/style.css" rel="stylesheet">
-	<title>Dettagli dello chef</title>
+	<title>Ingredient's details</title>
 </head>
 
 <body>
@@ -13,13 +13,17 @@
 		<div id="ingredient-image2"><img
 				th:src="@{${'https://picsum.photos/seed/'+ingrediente.nome+ingrediente.origine+ingrediente.descrizione+'/100'}}">
 		</div>
+		<!--<div id="ingredient-image2">
+			<img src="/images/ingredient.png" width="20%">
+			   
+		</div>-->
 		<ul class="list">
 			<li><span th:text="#{ingredientename.message}+' '+${ingrediente.nome}">sale</span></li>
 			<li><span th:text="#{ingredienteorigin.message}+' '+${ingrediente.origine}">Rossi</span></li>
 			<li><span th:text="#{ingredientedescription.message}+' '+${ingrediente.descrizione}">a b c</span></li>   
 		</ul>
 		   
-		<div><a class="link" th:href="@{/admin/ingredients}" th:text="#{ingredientlist.name}">Lista degli
+		<div><a class="link" th:href="@{/admin/ingredients}" th:text="#{ingredientslist.go}">Lista degli
 				ingredienti</a></div>
 		<div><a class="link" th:href="@{/welcomePageAdmin}" th:text="#{go.welcomePage}">Torna alla</a></div>
 		    <div>

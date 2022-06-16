@@ -4,15 +4,15 @@
 <head>
 	<meta charset="UTF-8" />
 	<link href="/css/style.css" rel="stylesheet">
-	<title>Dettagli dello chef</title>
+	<title>Chef's details</title>
 </head>
 
 <body>
 	<div class="flex-container2">
-		    <h1>Dettagli dello chef da te inserito:</h1>
+		    <h1 th:text="#{chefdetails.message}">Dettagli dello chef da te inserito:</h1>
 		<div id="avatar-image2"><img
-					th:src="@{${'https://avatars.dicebear.com/v2/croodles/:'+ chef.nome + chef.cognome +chef.nazionalita + '.svg'}}">
-			</div>
+				th:src="@{${'https://avatars.dicebear.com/v2/croodles/:'+ chef.nome + chef.cognome +chef.nazionalita + '.svg'}}">
+		</div>
 		<ul class="list">
 			<li><span th:text="#{chefname.message}+' '+${chef.nome}">Paolo</span></li>
 			<li><span th:text="#{chefsurname.message}+' '+${chef.cognome}">Rossi</span></li>

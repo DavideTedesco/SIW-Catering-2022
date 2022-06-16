@@ -6,10 +6,6 @@ import org.springframework.validation.Validator;
 
 import it.uniroma3.siw.catering.model.User;
 
-
-/**
- * Validator for User
- */
 @Component
 public class UserValidator implements Validator {
 

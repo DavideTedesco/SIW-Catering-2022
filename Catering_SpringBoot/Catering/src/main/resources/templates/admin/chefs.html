@@ -9,13 +9,13 @@
 
 	<link href="/css/style.css" rel="stylesheet">
 	<link rel="icon" href="/images/cloche.ico" type="image/x-icon">
-	<title>Explore</title>
+	<title>Chefs</title>
 </head>
 
 <body>
 	<div class="flex-container-chef">
 		<div>
-			<h2 th:text="#{header.chefs}">lista chef</h2>
+			<h1 th:text="#{header.chefs}">lista chef</h1>
 			<th:block th:each="chef : ${chefs}">
 				<div id="avatar-image"><img
 						th:src="@{${'https://avatars.dicebear.com/v2/croodles/:'+ chef.nome + chef.cognome +chef.nazionalita + '.svg'}}">
